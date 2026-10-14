@@ -1,0 +1,615 @@
+*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'D:\keil5\ARM\ARMCC\Bin'
+Build target 'Computer_Sim'
+compiling lv_font_manager_recycle.c...
+compiling lv_font_manager.c...
+compiling lv_anim_timeline.c...
+compiling lv_indev_scroll.c...
+..\lvgl\src\indev\lv_indev_scroll.c(530): warning:  #188-D: enumerated type mixed with another type
+          if(lv_obj_has_flag_any(child, LV_OBJ_FLAG_HIDDEN | LV_OBJ_FLAG_FLOATING)) continue;
+..\lvgl\src\indev\lv_indev_scroll.c(586): warning:  #188-D: enumerated type mixed with another type
+          if(lv_obj_has_flag_any(child, LV_OBJ_FLAG_HIDDEN | LV_OBJ_FLAG_FLOATING)) continue;
+..\lvgl\src\indev\lv_indev_scroll.c: 2 warnings, 0 errors
+compiling lv_gridnav.c...
+compiling lv_indev_gesture.c...
+compiling lv_layout.c...
+..\lvgl\src\layouts\lv_layout.c(82): warning:  #188-D: enumerated type mixed with another type
+      lv_layout_t layout_id = lv_obj_get_style_layout(obj, LV_PART_MAIN);
+..\lvgl\src\layouts\lv_layout.c(94): warning:  #188-D: enumerated type mixed with another type
+      lv_layout_t layout_id = lv_obj_get_style_layout(obj, LV_PART_MAIN);
+..\lvgl\src\layouts\lv_layout.c: 2 warnings, 0 errors
+compiling lv_array.c...
+compiling lv_async.c...
+compiling lv_font_montserrat_44.c...
+compiling lv_font_montserrat_48.c...
+compiling lv_bidi.c...
+compiling lv_grid.c...
+..\lvgl\src\layouts\grid\lv_grid.c(319): warning:  #188-D: enumerated type mixed with another type
+                  if(lv_obj_has_flag_any(item, LV_OBJ_FLAG_IGNORE_LAYOUT | LV_OBJ_FLAG_HIDDEN | LV_OBJ_FLAG_FLOATING)) continue;
+..\lvgl\src\layouts\grid\lv_grid.c(409): warning:  #188-D: enumerated type mixed with another type
+                  if(lv_obj_has_flag_any(item, LV_OBJ_FLAG_IGNORE_LAYOUT | LV_OBJ_FLAG_HIDDEN | LV_OBJ_FLAG_FLOATING)) continue;
+..\lvgl\src\layouts\grid\lv_grid.c(473): warning:  #188-D: enumerated type mixed with another type
+      if(lv_obj_has_flag_any(item, LV_OBJ_FLAG_IGNORE_LAYOUT | LV_OBJ_FLAG_HIDDEN | LV_OBJ_FLAG_FLOATING)) return;
+..\lvgl\src\layouts\grid\lv_grid.c: 3 warnings, 0 errors
+compiling lv_flex.c...
+..\lvgl\src\layouts\flex\lv_flex.c(341): warning:  #188-D: enumerated type mixed with another type
+          if(!lv_obj_has_flag_any(item, LV_OBJ_FLAG_IGNORE_LAYOUT | LV_OBJ_FLAG_HIDDEN | LV_OBJ_FLAG_FLOATING)) {
+..\lvgl\src\layouts\flex\lv_flex.c(478): warning:  #188-D: enumerated type mixed with another type
+          if(lv_obj_has_flag_any(item, LV_OBJ_FLAG_IGNORE_LAYOUT | LV_OBJ_FLAG_HIDDEN | LV_OBJ_FLAG_FLOATING)) {
+..\lvgl\src\layouts\flex\lv_flex.c: 2 warnings, 0 errors
+compiling lv_circle_buf.c...
+compiling lv_font_fmt_txt.c...
+..\lvgl\src\font\fmt_txt\lv_font_fmt_txt.c(219): warning:  #111-D: statement is unreachable
+      return NULL;
+..\lvgl\src\font\fmt_txt\lv_font_fmt_txt.c(270): warning:  #188-D: enumerated type mixed with another type
+      dsc_out->format = (uint8_t)fdsc->bpp;
+..\lvgl\src\font\fmt_txt\lv_font_fmt_txt.c: 2 warnings, 0 errors
+compiling lv_color.c...
+compiling lv_color_op.c...
+compiling lv_indev.c...
+..\lvgl\src\indev\lv_indev.c(487): warning:  #188-D: enumerated type mixed with another type
+      lv_obj_add_flag(indev->cursor, LV_OBJ_FLAG_IGNORE_LAYOUT | LV_OBJ_FLAG_FLOATING);
+..\lvgl\src\indev\lv_indev.c(522): warning:  #188-D: enumerated type mixed with another type
+      return indev->pointer.gesture_dir;
+..\lvgl\src\indev\lv_indev.c(542): warning:  #188-D: enumerated type mixed with another type
+      if(indev == 
+ULL) return 
+alse;
+..\lvgl\src\indev\lv_indev.c(543): warning:  #188-D: enumerated type mixed with another type
+      if(indev->type != LV_INDEV_TYPE_POINTER && indev->type != LV_INDEV_TYPE_BUTTON) return 
+alse;
+..\lvgl\src\indev\lv_indev.c(544): warning:  #188-D: enumerated type mixed with another type
+      return indev->pointer.scroll_dir;
+..\lvgl\src\indev\lv_indev.c(809): warning:  #188-D: enumerated type mixed with another type
+          data->key = i->key_remap_cb(i, data->key);
+..\lvgl\src\indev\lv_indev.c: 6 warnings, 0 errors
+compiling lv_font_source_han_sans_sc_14_cjk.c...
+compiling lv_anim.c...
+compiling lv_font_source_han_sans_sc_16_cjk.c...
+compiling lv_font_montserrat_46.c...
+compiling lv_grad.c...
+compiling lv_binfont_loader.c...
+..\lvgl\src\font\binfont_loader\lv_binfont_loader.c(252): warning:  #188-D: enumerated type mixed with another type
+          cmap->type = cmap_table[i].format_type;
+..\lvgl\src\font\binfont_loader\lv_binfont_loader.c: 1 warning, 0 errors
+compiling lv_iter.c...
+compiling lv_imgfont.c...
+compiling lv_font_unscii_8.c...
+compiling lv_font_unscii_16.c...
+compiling lv_area.c...
+compiling lv_ll.c...
+compiling lv_log.c...
+compiling lv_event.c...
+..\lvgl\src\misc\lv_event.c(131): warning:  #188-D: enumerated type mixed with another type
+          lv_event_code_t filter = dsc->filter & ~LV_EVENT_PREPROCESS;
+..\lvgl\src\misc\lv_event.c(278): warning:  #188-D: enumerated type mixed with another type
+      return e->code & ~LV_EVENT_PREPROCESS;
+..\lvgl\src\misc\lv_event.c: 2 warnings, 0 errors
+compiling lv_matrix.c...
+compiling lv_lru.c...
+..\lvgl\src\misc\lv_lru.c(237): warning:  #68-D: integer conversion resulted in a change of sign
+      uint32_t i = 0, min_index = -1;
+..\lvgl\src\misc\lv_lru.c(238): warning:  #68-D: integer conversion resulted in a change of sign
+      uint64_t min_access_count = -1;
+..\lvgl\src\misc\lv_lru.c: 2 warnings, 0 errors
+compiling lv_fs.c...
+compiling lv_profiler_builtin_posix.c...
+compiling lv_math.c...
+compiling lv_pending.c...
+compiling lv_palette.c...
+compiling lv_rb.c...
+..\lvgl\src\misc\lv_rb.c(429): warning:  #1293-D: assignment in condition
+      while((parent = node->parent) && parent->color == LV_RB_COLOR_RED) {
+..\lvgl\src\misc\lv_rb.c: 1 warning, 0 errors
+compiling lv_templ.c...
+compiling lv_tree.c...
+compiling lv_style_gen.c...
+compiling lv_cache_entry.c...
+compiling lv_cache.c...
+compiling lv_text.c...
+compiling lv_text_ap.c...
+compiling lv_utils.c...
+compiling lv_style.c...
+compiling lv_cache_lru_ll.c...
+compiling lv_cmsis_rtos2.c...
+compiling lv_cache_sc_da.c...
+compiling lv_cache_lru_rb.c...
+..\lvgl\src\misc\cache\class\lv_cache_lru_rb.c(161): warning:  #546-D: transfer of control bypasses initialization of:
+            variable "data"  (declared at line 163)
+            variable "entry"  (declared at line 164)
+            variable "lru_node"  (declared at line 167)
+          goto FAILED_HANDLER2;
+          ^
+..\lvgl\src\misc\cache\class\lv_cache_lru_rb.c: 1 warning, 0 errors
+compiling lv_timer.c...
+compiling lv_image_cache.c...
+compiling lv_linux.c...
+compiling lv_mqx.c...
+compiling lv_profiler_builtin.c...
+compiling lv_os_none.c...
+compiling lv_pthread.c...
+compiling lv_rtthread.c...
+compiling lv_image_header_cache.c...
+compiling lv_sdl2.c...
+compiling lv_freertos.c...
+..\lvgl\src\osal\lv_freertos.c(130): warning:  #223-D: function "xSemaphoreTakeRecursive" declared implicitly
+      BaseType_t xMutexTakeStatus = xSemaphoreTakeRecursive(pxMutex->xMutex, portMAX_DELAY);
+..\lvgl\src\osal\lv_freertos.c(166): warning:  #223-D: function "xSemaphoreGiveRecursive" declared implicitly
+      BaseType_t xMutexGiveStatus = xSemaphoreGiveRecursive(pxMutex->xMutex);
+..\lvgl\src\osal\lv_freertos.c(443): warning:  #223-D: function "xSemaphoreCreateRecursiveMutex" declared implicitly
+      pxMutex->xMutex = xSemaphoreCreateRecursiveMutex();
+..\lvgl\src\osal\lv_freertos.c(443): error:  #513: a value of type "int" cannot be assigned to an entity of type "SemaphoreHandle_t"
+      pxMutex->xMutex = xSemaphoreCreateRecursiveMutex();
+..\lvgl\src\osal\lv_freertos.c: 3 warnings, 1 error
+compiling lv_windows.c...
+compiling lv_os.c...
+compiling lv_translation.c...
+compiling lv_file_explorer.c...
+compiling lv_fragment.c...
+compiling lv_fragment_manager.c...
+compiling lv_mem_core_uefi.c...
+compiling lv_mem_core_rtthread.c...
+compiling lv_sprintf_rtthread.c...
+compiling lv_string_rtthread.c...
+compiling lv_mem.c...
+compiling lv_mem_core_micropython.c...
+compiling lv_mem_core_clib.c...
+compiling lv_sprintf_clib.c...
+compiling lv_string_clib.c...
+compiling lv_sprintf_builtin.c...
+compiling lv_string_builtin.c...
+compiling lv_mem_core_builtin.c...
+compiling lv_tlsf.c...
+..\lvgl\src\stdlib\builtin\lv_tlsf.c(897): warning:  #68-D: integer conversion resulted in a change of sign
+          offset_to_block(pool, -(int)block_header_overhead);
+..\lvgl\src\stdlib\builtin\lv_tlsf.c(999): warning:  #68-D: integer conversion resulted in a change of sign
+      block = offset_to_block(mem, -(tlsfptr_t)block_header_overhead);
+..\lvgl\src\stdlib\builtin\lv_tlsf.c(1017): warning:  #68-D: integer conversion resulted in a change of sign
+      block_header_t * block = offset_to_block(pool, -(int)block_header_overhead);
+..\lvgl\src\stdlib\builtin\lv_tlsf.c: 3 warnings, 0 errors
+compiling lv_tileview.c...
+compiling lv_switch.c...
+..\lvgl\src\widgets\switch\lv_switch.c(180): warning:  #188-D: enumerated type mixed with another type
+          lv_state_t diff = prev_state ^ lv_obj_get_state(obj);
+..\lvgl\src\widgets\switch\lv_switch.c: 1 warning, 0 errors
+compiling lv_textarea.c...
+compiling lv_tick.c...
+compiling lv_spinbox.c...
+..\lvgl\src\widgets\spinbox\lv_spinbox.c(341): warning:  #188-D: enumerated type mixed with another type
+      return spinbox->digit_step_dir;
+..\lvgl\src\widgets\spinbox\lv_spinbox.c: 1 warning, 0 errors
+compiling lv_spinner.c...
+compiling lv_animimage_properties.c...
+compiling lv_buttonmatrix_properties.c...
+compiling lv_slider.c...
+compiling lv_theme.c...
+compiling lv_table.c...
+..\lvgl\src\widgets\table\lv_table.c(120): warning:  #188-D: enumerated type mixed with another type
+      lv_table_cell_ctrl_t ctrl = 0;
+..\lvgl\src\widgets\table\lv_table.c(159): warning:  #188-D: enumerated type mixed with another type
+      lv_table_cell_ctrl_t ctrl = 0;
+..\lvgl\src\widgets\table\lv_table.c(344): warning:  #188-D: enumerated type mixed with another type
+          table->cell_data[cell]->ctrl = 0;
+..\lvgl\src\widgets\table\lv_table.c(370): warning:  #188-D: enumerated type mixed with another type
+          table->cell_data[cell]->ctrl = 0;
+..\lvgl\src\widgets\table\lv_table.c(395): warning:  #188-D: enumerated type mixed with another type
+          table->cell_data[cell]->ctrl = 0;
+..\lvgl\src\widgets\table\lv_table.c(695): warning:  #188-D: enumerated type mixed with another type
+      lv_state_t state_ori = obj->state;
+..\lvgl\src\widgets\table\lv_table.c(735): warning:  #188-D: enumerated type mixed with another type
+              lv_table_cell_ctrl_t ctrl = 0;
+..\lvgl\src\widgets\table\lv_table.c: 7 warnings, 0 errors
+compiling lv_scale.c...
+compiling lv_roller.c...
+compiling lv_span.c...
+..\lvgl\src\widgets\span\lv_span.c(484): warning:  #188-D: enumerated type mixed with another type
+      return spans->overflow;
+..\lvgl\src\widgets\span\lv_span.c(1341): warning:  #188-D: enumerated type mixed with another type
+              label_draw_dsc.decor = lv_span_get_style_text_decor(obj, pinfo->span);
+..\lvgl\src\widgets\span\lv_span.c(1248): warning:  #546-D: transfer of control bypasses initialization of:
+            variable "align_ofs"  (declared at line 1262)
+            variable "txts_w"  (declared at line 1263)
+              goto Next_line_init;
+              ^
+..\lvgl\src\widgets\span\lv_span.c: 3 warnings, 0 errors
+compiling lv_arc_properties.c...
+compiling lv_theme_simple.c...
+compiling lv_win.c...
+compiling lv_bar_properties.c...
+compiling lv_theme_mono.c...
+compiling lv_tabview.c...
+compiling lv_chart_properties.c...
+compiling lv_checkbox_properties.c...
+compiling lv_theme_default.c...
+..\lvgl\src\themes\default\lv_theme_default.c(524): warning:  #188-D: enumerated type mixed with another type
+      lv_style_set_border_side(&theme->styles.table_cell, LV_BORDER_SIDE_TOP | LV_BORDER_SIDE_BOTTOM);
+..\lvgl\src\themes\default\lv_theme_default.c: 1 warning, 0 errors
+compiling lv_image_properties.c...
+compiling lv_keyboard_properties.c...
+compiling lv_dropdown_properties.c...
+compiling lv_label_properties.c...
+compiling lv_led_properties.c...
+compiling lv_line_properties.c...
+compiling lv_menu_properties.c...
+compiling lv_objx_templ.c...
+compiling lv_style_properties.c...
+compiling lv_obj_properties.c...
+compiling lv_spinner_properties.c...
+compiling lv_roller_properties.c...
+compiling lv_lottie.c...
+compiling lv_span_properties.c...
+compiling lv_scale_properties.c...
+compiling lv_slider_properties.c...
+compiling lv_spinbox_properties.c...
+compiling lv_switch_properties.c...
+compiling lv_tabview_properties.c...
+compiling lv_table_properties.c...
+compiling lv_gif.c...
+compiling lv_textarea_properties.c...
+compiling lv_msgbox.c...
+compiling lv_list.c...
+compiling lv_menu.c...
+compiling lv_line.c...
+compiling lv_led.c...
+compiling lv_ime_pinyin.c...
+compiling lv_keyboard.c...
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(109): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(109): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(109): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(109): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(109): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(109): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(109): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(109): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(109): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(109): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(109): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(109): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(110): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(110): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(110): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(110): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(110): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(110): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(110): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(110): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(110): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(110): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(110): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(111): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(111): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(111): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(111): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(111): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(111): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(111): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(111): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(111): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(111): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(111): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(111): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(112): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(116): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | 2, 6, LV_BUTTONMATRIX_CTRL_CHECKED | 2, LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(116): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | 2, 6, LV_BUTTONMATRIX_CTRL_CHECKED | 2, LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(116): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | 2, 6, LV_BUTTONMATRIX_CTRL_CHECKED | 2, LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(116): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | 2, 6, LV_BUTTONMATRIX_CTRL_CHECKED | 2, LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(130): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(130): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(130): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(130): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(130): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(130): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(130): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(130): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(130): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(130): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(130): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(130): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 5, LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(131): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(131): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(131): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(131): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(131): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(131): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(131): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(131): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(131): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(131): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(131): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(132): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(132): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(132): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(132): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(132): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(132): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(132): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(132): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(132): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(132): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(132): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(132): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(133): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(137): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | 2, 6, LV_BUTTONMATRIX_CTRL_CHECKED | 2, LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(137): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | 2, 6, LV_BUTTONMATRIX_CTRL_CHECKED | 2, LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(137): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | 2, 6, LV_BUTTONMATRIX_CTRL_CHECKED | 2, LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(137): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | 2, 6, LV_BUTTONMATRIX_CTRL_CHECKED | 2, LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(167): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | 2,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(167): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | 2,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(167): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | 2,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(167): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | 2,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(167): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | 2,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(167): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | 2,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(167): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | 2,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(167): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | 2,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(167): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | 2,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(167): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | 2,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(167): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | 2,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(168): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2, LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(168): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2, LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(168): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2, LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(168): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2, LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(168): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2, LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(168): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2, LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(168): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2, LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(168): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2, LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(168): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2, LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(168): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2, LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(168): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2, LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(168): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2, LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(168): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2, LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(169): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(169): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(169): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(169): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(169): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(169): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(169): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(169): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(169): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(169): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(169): warning:  #188-D: enumerated type mixed with another type
+      LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1),
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(170): warning:  #188-D: enumerated type mixed with another type
+      LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2,
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(174): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | 2, 6, LV_BUTTONMATRIX_CTRL_CHECKED | 2, LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(174): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | 2, 6, LV_BUTTONMATRIX_CTRL_CHECKED | 2, LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(174): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | 2, 6, LV_BUTTONMATRIX_CTRL_CHECKED | 2, LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(174): warning:  #188-D: enumerated type mixed with another type
+      LV_BUTTONMATRIX_CTRL_CHECKED | 2, 6, LV_BUTTONMATRIX_CTRL_CHECKED | 2, LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(184): warning:  #188-D: enumerated type mixed with another type
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(184): warning:  #188-D: enumerated type mixed with another type
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(184): warning:  #188-D: enumerated type mixed with another type
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(184): warning:  #188-D: enumerated type mixed with another type
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(185): warning:  #188-D: enumerated type mixed with another type
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(185): warning:  #188-D: enumerated type mixed with another type
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(185): warning:  #188-D: enumerated type mixed with another type
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(185): warning:  #188-D: enumerated type mixed with another type
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(186): warning:  #188-D: enumerated type mixed with another type
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(186): warning:  #188-D: enumerated type mixed with another type
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(186): warning:  #188-D: enumerated type mixed with another type
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(186): warning:  #188-D: enumerated type mixed with another type
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(187): warning:  #188-D: enumerated type mixed with another type
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(187): warning:  #188-D: enumerated type mixed with another type
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(187): warning:  #188-D: enumerated type mixed with another type
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(187): warning:  #188-D: enumerated type mixed with another type
+..\lvgl\src\widgets\keyboard\lv_keyboard.c(187): warning:  #188-D: enumerated type mixed with another type
+..\lvgl\src\widgets\keyboard\lv_keyboard.c: 137 warnings, 0 errors
+compiling lv_3dtexture.c...
+compiling lv_imagebutton.c...
+..\lvgl\src\widgets\imagebutton\lv_imagebutton.c(134): warning:  #188-D: enumerated type mixed with another type
+      lv_obj_remove_state(obj, LV_STATE_CHECKED | LV_STATE_PRESSED | LV_STATE_DISABLED);
+..\lvgl\src\widgets\imagebutton\lv_imagebutton.c: 1 warning, 0 errors
+compiling lv_label.c...
+compiling lv_checkbox.c...
+compiling lv_image.c...
+..\lvgl\src\widgets\image\lv_image.c(621): warning:  #188-D: enumerated type mixed with another type
+      return img->blend_mode;
+..\lvgl\src\widgets\image\lv_image.c(639): warning:  #188-D: enumerated type mixed with another type
+      return img->align;
+..\lvgl\src\widgets\image\lv_image.c(810): warning:  #188-D: enumerated type mixed with another type
+          if(lv_color_format_has_alpha(img->cf)) {
+..\lvgl\src\widgets\image\lv_image.c(878): warning:  #188-D: enumerated type mixed with another type
+              draw_dsc.blend_mode = img->blend_mode;
+..\lvgl\src\widgets\image\lv_image.c(891): warning:  #188-D: enumerated type mixed with another type
+                  lv_area_align(&obj->coords, &draw_dsc.image_area, img->align, img->offset.x, img->offset.y);
+..\lvgl\src\widgets\image\lv_image.c(945): warning:  #188-D: enumerated type mixed with another type
+                  lv_area_align(&obj->coords, &aligned_coords, img->align, img->offset.x, img->offset.y);
+..\lvgl\src\widgets\image\lv_image.c: 6 warnings, 0 errors
+compiling lv_calendar_chinese.c...
+compiling lv_calendar_header_arrow.c...
+compiling lv_calendar_header_dropdown.c...
+compiling lv_canvas.c...
+..\lvgl\src\widgets\canvas\lv_canvas.c(120): warning:  #188-D: enumerated type mixed with another type
+      lv_color_format_t cf = draw_buf->header.cf;
+..\lvgl\src\widgets\canvas\lv_canvas.c(394): warning:  #188-D: enumerated type mixed with another type
+      layer->color_format = header->cf;
+..\lvgl\src\widgets\canvas\lv_canvas.c: 2 warnings, 0 errors
+compiling lv_button.c...
+compiling lv_dropdown.c...
+..\lvgl\src\widgets\dropdown\lv_dropdown.c(528): warning:  #188-D: enumerated type mixed with another type
+      return dropdown->dir;
+..\lvgl\src\widgets\dropdown\lv_dropdown.c(568): warning:  #188-D: enumerated type mixed with another type
+      lv_dir_t dir = dropdown->dir;
+..\lvgl\src\widgets\dropdown\lv_dropdown.c(1053): warning:  #188-D: enumerated type mixed with another type
+                  draw_box(dropdown_obj, layer, dropdown->pr_opt_id, LV_STATE_CHECKED | LV_STATE_PRESSED);
+..\lvgl\src\widgets\dropdown\lv_dropdown.c(1054): warning:  #188-D: enumerated type mixed with another type
+                  draw_box_label(dropdown_obj, layer, dropdown->pr_opt_id, LV_STATE_CHECKED | LV_STATE_PRESSED);
+..\lvgl\src\widgets\dropdown\lv_dropdown.c(1077): warning:  #188-D: enumerated type mixed with another type
+      lv_state_t state_ori = list_obj->state;
+..\lvgl\src\widgets\dropdown\lv_dropdown.c(1117): warning:  #188-D: enumerated type mixed with another type
+      lv_state_t state_orig = list_obj->state;
+..\lvgl\src\widgets\dropdown\lv_dropdown.c: 6 warnings, 0 errors
+compiling lv_buttonmatrix.c...
+..\lvgl\src\widgets\buttonmatrix\lv_buttonmatrix.c(639): warning:  #188-D: enumerated type mixed with another type
+      lv_state_t state_ori = obj->state;
+..\lvgl\src\widgets\buttonmatrix\lv_buttonmatrix.c: 1 warning, 0 errors
+compiling lv_chart.c...
+compiling lv_arclabel.c...
+..\lvgl\src\widgets\arclabel\lv_arclabel.c(352): warning:  #188-D: enumerated type mixed with another type
+      return ((lv_arclabel_t *) obj)->overflow;
+..\lvgl\src\widgets\arclabel\lv_arclabel.c(392): warning:  #188-D: enumerated type mixed with another type
+      lv_obj_remove_flag(obj, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLL_CHAIN | LV_OBJ_FLAG_SCROLLABLE);
+..\lvgl\src\widgets\arclabel\lv_arclabel.c(596): warning:  #188-D: enumerated type mixed with another type
+                                                                         arclabel->overflow, arclabel->end_overlap, need_ellipsis, letter_count);
+..\lvgl\src\widgets\arclabel\lv_arclabel.c: 3 warnings, 0 errors
+compiling lv_animimage.c...
+compiling lv_bar.c...
+compiling lv_arc.c...
+..\lvgl\src\widgets\arc\lv_arc.c(419): warning:  #188-D: enumerated type mixed with another type
+      return ((lv_arc_t *) obj)->type;
+..\lvgl\src\widgets\arc\lv_arc.c(540): warning:  #188-D: enumerated type mixed with another type
+      lv_obj_remove_flag(obj, LV_OBJ_FLAG_SCROLL_CHAIN | LV_OBJ_FLAG_SCROLLABLE);
+..\lvgl\src\widgets\arc\lv_arc.c: 2 warnings, 0 errors
+compiling lv_calendar.c...
+..\lvgl\src\widgets\calendar\lv_calendar.c(355): warning:  #188-D: enumerated type mixed with another type
+      lv_buttonmatrix_set_button_ctrl_all(calendar->btnm, LV_BUTTONMATRIX_CTRL_CLICK_TRIG | LV_BUTTONMATRIX_CTRL_NO_REPEAT);
+..\lvgl\src\widgets\calendar\lv_calendar.c(358): warning:  #188-D: enumerated type mixed with another type
+      lv_obj_add_flag(calendar->btnm, LV_OBJ_FLAG_EVENT_BUBBLE | LV_OBJ_FLAG_SEND_DRAW_TASK_EVENTS);
+..\lvgl\src\widgets\calendar\lv_calendar.c(470): warning:  #188-D: enumerated type mixed with another type
+      lv_buttonmatrix_clear_button_ctrl_all(calendar->btnm, 
+V_CALENDAR_CTRL_TODAY | 
+V_CALENDAR_CTRL_HIGHLIGHT);
+..\lvgl\src\widgets\calendar\lv_calendar.c: 3 warnings, 0 errors
+compiling lv_demos.c...
+compiling lv_demo_widgets_components.c...
+compiling img_clothes.c...
+compiling lv_demo_widgets_shop.c...
+compiling img_lvgl_logo.c...
+compiling lv_demo_widgets_profile.c...
+compiling img_demo_widgets_needle.c...
+compiling lv_demo_widgets_analytics.c...
+..\lvgl\demos\widgets\lv_demo_widgets_analytics.c(546): warning:  #188-D: enumerated type mixed with another type
+      lv_obj_add_flag(chart, LV_OBJ_FLAG_SCROLL_ON_FOCUS | LV_OBJ_FLAG_SEND_DRAW_TASK_EVENTS);
+..\lvgl\demos\widgets\lv_demo_widgets_analytics.c: 1 warning, 0 errors
+compiling img_demo_widgets_avatar.c...
+compiling lv_demo_widgets.c...
+..\lvgl\demos\widgets\lv_demo_widgets.c(169): warning:  #188-D: enumerated type mixed with another type
+      lv_obj_add_flag(btn, LV_OBJ_FLAG_FLOATING | LV_OBJ_FLAG_CLICKABLE);
+..\lvgl\demos\widgets\lv_demo_widgets.c(263): warning:  #188-D: enumerated type mixed with another type
+          lv_palette_t palette_secondary = (*palette_primary) + 3; /*Use another palette as secondary*/
+..\lvgl\demos\widgets\lv_demo_widgets.c(264): warning:  #188-D: enumerated type mixed with another type
+          if(palette_secondary >= LV_PALETTE_LAST) palette_secondary = 0;
+..\lvgl\demos\widgets\lv_demo_widgets.c: 3 warnings, 0 errors
+compiling sram.c...
+compiling touch.c...
+compiling debug.c...
+compiling lcd.c...
+"Computer_Sim\Computer_Sim.axf" - 1 Error(s), 208 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:56

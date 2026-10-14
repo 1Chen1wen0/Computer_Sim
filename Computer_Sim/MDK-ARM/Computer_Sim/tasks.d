@@ -1,0 +1,16 @@
+computer_sim\tasks.o: ..\FreeRTOS\tasks.c
+computer_sim\tasks.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+computer_sim\tasks.o: D:\keil5\ARM\ARMCC\Bin\..\include\string.h
+computer_sim\tasks.o: ../FreeRTOS/include/FreeRTOS.h
+computer_sim\tasks.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+computer_sim\tasks.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+computer_sim\tasks.o: ../Core/Inc/FreeRTOSConfig.h
+computer_sim\tasks.o: ../FreeRTOS/include/projdefs.h
+computer_sim\tasks.o: ../FreeRTOS/include/portable.h
+computer_sim\tasks.o: ../FreeRTOS/include/deprecated_definitions.h
+computer_sim\tasks.o: ../FreeRTOS/portable/RVDS/ARM_CM4F/portmacro.h
+computer_sim\tasks.o: ../FreeRTOS/include/mpu_wrappers.h
+computer_sim\tasks.o: ../FreeRTOS/include/task.h
+computer_sim\tasks.o: ../FreeRTOS/include/list.h
+computer_sim\tasks.o: ../FreeRTOS/include/timers.h
+computer_sim\tasks.o: ../FreeRTOS/include/stack_macros.h

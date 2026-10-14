@@ -1,0 +1,9 @@
+computer_sim\lv_bmp.o: ..\lvgl\src\libs\bmp\lv_bmp.c
+computer_sim\lv_bmp.o: ..\lvgl\src\libs\bmp\../../draw/lv_image_decoder_private.h
+computer_sim\lv_bmp.o: ..\lvgl\src\libs\bmp\../../draw/../misc/cache/lv_cache.h
+computer_sim\lv_bmp.o: ..\lvgl\src\libs\bmp\../../draw/../misc/cache/../../lvgl_public.h
+computer_sim\lv_bmp.o: ..\lvgl\src\libs\bmp\../../draw/../misc/cache/../../../include/lvgl/lvgl.h
+computer_sim\lv_bmp.o: ..\lvgl\src\libs\bmp\../../draw/../misc/cache/../../../include/lvgl/lv_version.h
+computer_sim\lv_bmp.o: ..\lvgl\src\libs\bmp\../../draw/../misc/cache/../../../include/lvgl/3d/lv_3dmath.h
+computer_sim\lv_bmp.o: ..\lvgl\src\libs\bmp\../../draw/../misc/cache/../../../include/lvgl/3d/../config/lv_conf_internal.h
+computer_sim\lv_bmp.o: ..\lvgl\src\libs\bmp\../../draw/../misc/cache/../../../include/lvgl/3d/../config/lv_conf_kconfig.h

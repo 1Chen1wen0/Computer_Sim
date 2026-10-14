@@ -1,0 +1,43 @@
+*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'D:\keil5\ARM\ARMCC\Bin'
+Build target 'Computer_Sim'
+Note: source file '..\lvgl\src\draw\convert\neon\lv_draw_buf_convert_neon.c' - object file renamed from 'Computer_Sim\lv_draw_buf_convert_neon.o' to 'Computer_Sim\lv_draw_buf_convert_neon_1.o'.Note: source file '..\lvgl\src\libs\vg_lite_driver\VGLite\vg_lite_matrix.c' - object file renamed from 'Computer_Sim\vg_lite_matrix.o' to 'Computer_Sim\vg_lite_matrix_1.o'.Note: source file '..\lvgl\src\libs\fsdrv\lv_fs_cbfs.c' - object file renamed from 'Computer_Sim\lv_fs_cbfs.o' to 'Computer_Sim\lv_fs_cbfs_1.o'.Note: source file '..\lvgl\src\libs\fsdrv\lv_fs_fatfs.c' - object file renamed from 'Computer_Sim\lv_fs_fatfs.o' to 'Computer_Sim\lv_fs_fatfs_1.o'.Note: source file '..\lvgl\src\libs\fsdrv\lv_fs_frogfs.c' - object file renamed from 'Computer_Sim\lv_fs_frogfs.o' to 'Computer_Sim\lv_fs_frogfs_1.o'.Note: source file '..\lvgl\src\libs\fsdrv\lv_fs_littlefs.c' - object file renamed from 'Computer_Sim\lv_fs_littlefs.o' to 'Computer_Sim\lv_fs_littlefs_1.o'.Note: source file '..\lvgl\src\libs\fsdrv\lv_fs_memfs.c' - object file renamed from 'Computer_Sim\lv_fs_memfs.o' to 'Computer_Sim\lv_fs_memfs_1.o'.Note: source file '..\lvgl\src\libs\fsdrv\lv_fs_posix.c' - object file renamed from 'Computer_Sim\lv_fs_posix.o' to 'Computer_Sim\lv_fs_posix_1.o'.Note: source file '..\lvgl\src\libs\fsdrv\lv_fs_stdio.c' - object file renamed from 'Computer_Sim\lv_fs_stdio.o' to 'Computer_Sim\lv_fs_stdio_1.o'.Note: source file '..\lvgl\src\libs\fsdrv\lv_fs_uefi.c' - object file renamed from 'Computer_Sim\lv_fs_uefi.o' to 'Computer_Sim\lv_fs_uefi_1.o'.Note: source file '..\lvgl\src\libs\fsdrv\lv_fs_win32.c' - object file renamed from 'Computer_Sim\lv_fs_win32.o' to 'Computer_Sim\lv_fs_win32_1.o'.Note: source file '..\lvgl\src\libs\frogfs\src\decomp_raw.c' - object file renamed from 'Computer_Sim\decomp_raw.o' to 'Computer_Sim\decomp_raw_1.o'.Note: source file '..\lvgl\src\libs\frogfs\src\frogfs.c' - object file renamed from 'Computer_Sim\frogfs.o' to 'Computer_Sim\frogfs_1.o'.Note: source file '..\lvgl\src\libs\freetype\lv_freetype.c' - object file renamed from 'Computer_Sim\lv_freetype.o' to 'Computer_Sim\lv_freetype_1.o'.Note: source file '..\lvgl\src\libs\freetype\lv_freetype_glyph.c' - object file renamed from 'Computer_Sim\lv_freetype_glyph.o' to 'Computer_Sim\lv_freetype_glyph_1.o'.Note: source file '..\lvgl\src\libs\freetype\lv_freetype_image.c' - object file renamed from 'Computer_Sim\lv_freetype_image.o' to 'Computer_Sim\lv_freetype_image_1.o'.Note: source file '..\lvgl\src\libs\freetype\lv_freetype_outline.c' - object file renamed from 'Computer_Sim\lv_freetype_outline.o' to 'Computer_Sim\lv_freetype_outline_1.o'.Note: source file '..\lvgl\src\libs\freetype\lv_ftsystem.c' - object file renamed from 'Computer_Sim\lv_ftsystem.o' to 'Computer_Sim\lv_ftsystem_1.o'.Note: source file '..\lvgl\src\libs\ffmpeg\lv_ffmpeg.c' - object file renamed from 'Computer_Sim\lv_ffmpeg.o' to 'Computer_Sim\lv_ffmpeg_1.o'.Note: source file '..\lvgl\src\libs\bmp\lv_bmp.c' - object file renamed from 'Computer_Sim\lv_bmp.o' to 'Computer_Sim\lv_bmp_1.o'.Note: source file '..\lvgl\src\libs\bin_decoder\lv_bin_decoder.c' - object file renamed from 'Computer_Sim\lv_bin_decoder.o' to 'Computer_Sim\lv_bin_decoder_1.o'.Note: source file '..\lvgl\src\libs\barcode\code128.c' - object file renamed from 'Computer_Sim\code128.o' to 'Computer_Sim\code128_1.o'.Note: source file '..\lvgl\src\libs\barcode\lv_barcode.c' - object file renamed from 'Computer_Sim\lv_barcode.o' to 'Computer_Sim\lv_barcode_1.o'.compiling sram.c...
+..\SRAM\sram.c(27): error:  #20: identifier "FSMC_NORSRAMInitTypeDef" is undefined
+  	FSMC_NORSRAMInitTypeDef  FSMC_NORSRAMInitStructure;
+..\SRAM\sram.c(28): error:  #20: identifier "FSMC_NORSRAMTimingInitTypeDef" is undefined
+    FSMC_NORSRAMTimingInitTypeDef  readWriteTiming; 
+..\SRAM\sram.c(76): error:  #20: identifier "FSMC_AccessMode_A" is undefined
+    readWriteTiming.FSMC_AccessMode = FSMC_AccessMode_A;	 //模式A 
+..\SRAM\sram.c(80): error:  #20: identifier "FSMC_Bank1_NORSRAM3" is undefined
+    FSMC_NORSRAMInitStructure.FSMC_Bank = FSMC_Bank1_NORSRAM3;//  这里我们使用NE3 ，也就对应BTCR[4],[5]�?
+..\SRAM\sram.c(81): error:  #20: identifier "FSMC_DataAddressMux_Disable" is undefined
+    FSMC_NORSRAMInitStructure.FSMC_DataAddressMux = FSMC_DataAddressMux_Disable; 
+..\SRAM\sram.c(82): error:  #20: identifier "FSMC_MemoryType_SRAM" is undefined
+    FSMC_NORSRAMInitStructure.FSMC_MemoryType =FSMC_MemoryType_SRAM;// FSMC_MemoryType_SRAM;  //SRAM   
+..\SRAM\sram.c(83): error:  #20: identifier "FSMC_MemoryDataWidth_16b" is undefined
+    FSMC_NORSRAMInitStructure.FSMC_MemoryDataWidth = FSMC_MemoryDataWidth_16b;//存储器数据宽度为16bit  
+..\SRAM\sram.c(84): error:  #20: identifier "FSMC_BurstAccessMode_Disable" is undefined
+    FSMC_NORSRAMInitStructure.FSMC_BurstAccessMode =FSMC_BurstAccessMode_Disable;// FSMC_BurstAccessMode_Disable; 
+..\SRAM\sram.c(85): error:  #20: identifier "FSMC_WaitSignalPolarity_Low" is undefined
+    FSMC_NORSRAMInitStructure.FSMC_WaitSignalPolarity = FSMC_WaitSignalPolarity_Low;
+..\SRAM\sram.c(86): error:  #20: identifier "FSMC_AsynchronousWait_Disable" is undefined
+  	FSMC_NORSRAMInitStructure.FSMC_AsynchronousWait=FSMC_AsynchronousWait_Disable;
+..\SRAM\sram.c(87): error:  #20: identifier "FSMC_WrapMode_Disable" is undefined
+    FSMC_NORSRAMInitStructure.FSMC_WrapMode = FSMC_WrapMode_Disable;   
+..\SRAM\sram.c(88): error:  #20: identifier "FSMC_WaitSignalActive_BeforeWaitState" is undefined
+    FSMC_NORSRAMInitStructure.FSMC_WaitSignalActive = FSMC_WaitSignalActive_BeforeWaitState;  
+..\SRAM\sram.c(89): error:  #20: identifier "FSMC_WriteOperation_Enable" is undefined
+    FSMC_NORSRAMInitStructure.FSMC_WriteOperation = FSMC_WriteOperation_Enable;	//存储器写使能 
+..\SRAM\sram.c(90): error:  #20: identifier "FSMC_WaitSignal_Disable" is undefined
+    FSMC_NORSRAMInitStructure.FSMC_WaitSignal = FSMC_WaitSignal_Disable;  
+..\SRAM\sram.c(91): error:  #20: identifier "FSMC_ExtendedMode_Disable" is undefined
+    FSMC_NORSRAMInitStructure.FSMC_ExtendedMode = FSMC_ExtendedMode_Disable; // 读写使用相同的时�?
+..\SRAM\sram.c(92): error:  #20: identifier "FSMC_WriteBurst_Disable" is undefined
+    FSMC_NORSRAMInitStructure.FSMC_WriteBurst = FSMC_WriteBurst_Disable;  
+..\SRAM\sram.c(96): warning:  #223-D: function "FSMC_NORSRAMInit" declared implicitly
+    FSMC_NORSRAMInit(&FSMC_NORSRAMInitStructure);  //初始化FSMC配置
+..\SRAM\sram.c(98): warning:  #223-D: function "FSMC_NORSRAMCmd" declared implicitly
+   	FSMC_NORSRAMCmd(FSMC_Bank1_NORSRAM3, ENABLE);  // 使能BANK1区域3										  
+..\SRAM\sram.c: 2 warnings, 16 errors
+"Computer_Sim\Computer_Sim.axf" - 16 Error(s), 2 Warning(s).
+Target not created.
+Build Time Elapsed:  00:01:25

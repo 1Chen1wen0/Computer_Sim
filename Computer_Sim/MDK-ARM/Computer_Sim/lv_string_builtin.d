@@ -1,0 +1,16 @@
+computer_sim\lv_string_builtin.o: ..\lvgl\src\stdlib\builtin\lv_string_builtin.c
+computer_sim\lv_string_builtin.o: ..\lvgl\src\stdlib\builtin\../../lv_conf_internal.h
+computer_sim\lv_string_builtin.o: ..\lvgl\src\stdlib\builtin\../../lv_conf_kconfig.h
+computer_sim\lv_string_builtin.o: ../lvgl/lv_conf.h
+computer_sim\lv_string_builtin.o: ..\lvgl\src\stdlib\builtin\../../misc/lv_assert.h
+computer_sim\lv_string_builtin.o: ..\lvgl\src\stdlib\builtin\../../misc/lv_log.h
+computer_sim\lv_string_builtin.o: ..\lvgl\src\stdlib\builtin\../../misc/lv_types.h
+computer_sim\lv_string_builtin.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+computer_sim\lv_string_builtin.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+computer_sim\lv_string_builtin.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+computer_sim\lv_string_builtin.o: D:\keil5\ARM\ARMCC\Bin\..\include\inttypes.h
+computer_sim\lv_string_builtin.o: D:\keil5\ARM\ARMCC\Bin\..\include\limits.h
+computer_sim\lv_string_builtin.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdarg.h
+computer_sim\lv_string_builtin.o: ..\lvgl\src\stdlib\builtin\../../misc/../stdlib/lv_mem.h
+computer_sim\lv_string_builtin.o: ..\lvgl\src\stdlib\builtin\../../misc/../stdlib/lv_string.h
+computer_sim\lv_string_builtin.o: ..\lvgl\src\stdlib\builtin\../../misc/lv_math.h

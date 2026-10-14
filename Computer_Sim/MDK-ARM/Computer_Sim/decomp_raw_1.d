@@ -1,0 +1,17 @@
+computer_sim\decomp_raw_1.o: ..\lvgl\src\libs\frogfs\src\decomp_raw.c
+computer_sim\decomp_raw_1.o: ..\lvgl\src\libs\frogfs\src\../../../lv_conf_internal.h
+computer_sim\decomp_raw_1.o: ..\lvgl\src\libs\frogfs\src\../../../lv_conf_kconfig.h
+computer_sim\decomp_raw_1.o: ..\lvgl\lv_conf.h
+computer_sim\decomp_raw_1.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+computer_sim\decomp_raw_1.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+computer_sim\decomp_raw_1.o: ..\lvgl\src\libs\frogfs\src\../../../stdlib/lv_string.h
+computer_sim\decomp_raw_1.o: ..\lvgl\src\libs\frogfs\src\../../../stdlib/../misc/lv_types.h
+computer_sim\decomp_raw_1.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+computer_sim\decomp_raw_1.o: D:\keil5\ARM\ARMCC\Bin\..\include\inttypes.h
+computer_sim\decomp_raw_1.o: D:\keil5\ARM\ARMCC\Bin\..\include\limits.h
+computer_sim\decomp_raw_1.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdarg.h
+computer_sim\decomp_raw_1.o: ..\lvgl\src\libs\frogfs\src\../../../misc/lv_fs.h
+computer_sim\decomp_raw_1.o: ..\lvgl\src\libs\frogfs\src\frogfs_priv.h
+computer_sim\decomp_raw_1.o: ..\lvgl\src\libs\frogfs\src\../include/frogfs/frogfs_types.h
+computer_sim\decomp_raw_1.o: ..\lvgl\src\libs\frogfs\src\../include/frogfs/frogfs.h
+computer_sim\decomp_raw_1.o: ..\lvgl\src\libs\frogfs\src\frogfs_format.h

@@ -1,0 +1,12 @@
+computer_sim\lv_vg_lite_pending.o: ..\lvgl\src\draw\vg_lite\lv_vg_lite_pending.c
+computer_sim\lv_vg_lite_pending.o: ..\lvgl\src\draw\vg_lite\lv_vg_lite_pending.h
+computer_sim\lv_vg_lite_pending.o: ..\lvgl\src\draw\vg_lite\../../misc/lv_types.h
+computer_sim\lv_vg_lite_pending.o: ..\lvgl\src\draw\vg_lite\../../misc/../lv_conf_internal.h
+computer_sim\lv_vg_lite_pending.o: ..\lvgl\src\draw\vg_lite\../../misc/../lv_conf_kconfig.h
+computer_sim\lv_vg_lite_pending.o: ../lvgl/lv_conf.h
+computer_sim\lv_vg_lite_pending.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+computer_sim\lv_vg_lite_pending.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+computer_sim\lv_vg_lite_pending.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+computer_sim\lv_vg_lite_pending.o: D:\keil5\ARM\ARMCC\Bin\..\include\inttypes.h
+computer_sim\lv_vg_lite_pending.o: D:\keil5\ARM\ARMCC\Bin\..\include\limits.h
+computer_sim\lv_vg_lite_pending.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdarg.h

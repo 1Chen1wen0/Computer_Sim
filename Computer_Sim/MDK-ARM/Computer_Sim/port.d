@@ -1,0 +1,13 @@
+computer_sim\port.o: ..\FreeRTOS\portable\RVDS\ARM_CM4F\port.c
+computer_sim\port.o: ../FreeRTOS/include/FreeRTOS.h
+computer_sim\port.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+computer_sim\port.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+computer_sim\port.o: ../Core/Inc/FreeRTOSConfig.h
+computer_sim\port.o: ../FreeRTOS/include/projdefs.h
+computer_sim\port.o: ../FreeRTOS/include/portable.h
+computer_sim\port.o: ../FreeRTOS/include/deprecated_definitions.h
+computer_sim\port.o: ../FreeRTOS/portable/RVDS/ARM_CM4F/portmacro.h
+computer_sim\port.o: ../FreeRTOS/include/mpu_wrappers.h
+computer_sim\port.o: ../FreeRTOS/include/task.h
+computer_sim\port.o: ../FreeRTOS/include/list.h
+computer_sim\port.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdio.h

@@ -1,0 +1,13 @@
+computer_sim\heap_4.o: ..\FreeRTOS\portable\MemMang\heap_4.c
+computer_sim\heap_4.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+computer_sim\heap_4.o: ../FreeRTOS/include/FreeRTOS.h
+computer_sim\heap_4.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+computer_sim\heap_4.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+computer_sim\heap_4.o: ../Core/Inc/FreeRTOSConfig.h
+computer_sim\heap_4.o: ../FreeRTOS/include/projdefs.h
+computer_sim\heap_4.o: ../FreeRTOS/include/portable.h
+computer_sim\heap_4.o: ../FreeRTOS/include/deprecated_definitions.h
+computer_sim\heap_4.o: ../FreeRTOS/portable/RVDS/ARM_CM4F/portmacro.h
+computer_sim\heap_4.o: ../FreeRTOS/include/mpu_wrappers.h
+computer_sim\heap_4.o: ../FreeRTOS/include/task.h
+computer_sim\heap_4.o: ../FreeRTOS/include/list.h

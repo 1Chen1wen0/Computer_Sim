@@ -1,0 +1,14 @@
+computer_sim\stream_buffer.o: ..\FreeRTOS\stream_buffer.c
+computer_sim\stream_buffer.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+computer_sim\stream_buffer.o: D:\keil5\ARM\ARMCC\Bin\..\include\string.h
+computer_sim\stream_buffer.o: ../FreeRTOS/include/FreeRTOS.h
+computer_sim\stream_buffer.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+computer_sim\stream_buffer.o: ../Core/Inc/FreeRTOSConfig.h
+computer_sim\stream_buffer.o: ../FreeRTOS/include/projdefs.h
+computer_sim\stream_buffer.o: ../FreeRTOS/include/portable.h
+computer_sim\stream_buffer.o: ../FreeRTOS/include/deprecated_definitions.h
+computer_sim\stream_buffer.o: ../FreeRTOS/portable/RVDS/ARM_CM4F/portmacro.h
+computer_sim\stream_buffer.o: ../FreeRTOS/include/mpu_wrappers.h
+computer_sim\stream_buffer.o: ../FreeRTOS/include/task.h
+computer_sim\stream_buffer.o: ../FreeRTOS/include/list.h
+computer_sim\stream_buffer.o: ../FreeRTOS/include/stream_buffer.h

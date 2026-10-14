@@ -1,0 +1,13 @@
+computer_sim\lv_rle.o: ..\lvgl\src\libs\rle\lv_rle.c
+computer_sim\lv_rle.o: ..\lvgl\src\libs\rle\../../stdlib/lv_string.h
+computer_sim\lv_rle.o: ..\lvgl\src\libs\rle\../../stdlib/../lv_conf_internal.h
+computer_sim\lv_rle.o: ..\lvgl\src\libs\rle\../../stdlib/../lv_conf_kconfig.h
+computer_sim\lv_rle.o: ..\lvgl\lv_conf.h
+computer_sim\lv_rle.o: ..\lvgl\src\libs\rle\../../stdlib/../misc/lv_types.h
+computer_sim\lv_rle.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+computer_sim\lv_rle.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+computer_sim\lv_rle.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+computer_sim\lv_rle.o: D:\keil5\ARM\ARMCC\Bin\..\include\inttypes.h
+computer_sim\lv_rle.o: D:\keil5\ARM\ARMCC\Bin\..\include\limits.h
+computer_sim\lv_rle.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdarg.h
+computer_sim\lv_rle.o: ..\lvgl\src\libs\rle\lv_rle.h
