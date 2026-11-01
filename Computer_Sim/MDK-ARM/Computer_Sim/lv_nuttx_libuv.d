@@ -73,6 +73,7 @@ computer_sim\lv_nuttx_libuv.o: ..\lvgl\src\drivers\nuttx\../../../src/core/../dr
 computer_sim\lv_nuttx_libuv.o: ..\lvgl\src\drivers\nuttx\../../../src/core/../draw/lv_draw_label.h
 computer_sim\lv_nuttx_libuv.o: ..\lvgl\src\drivers\nuttx\../../../src/core/../draw/lv_draw_image.h
 computer_sim\lv_nuttx_libuv.o: ..\lvgl\src\drivers\nuttx\../../../src/core/../draw/lv_draw_line.h
+computer_sim\lv_nuttx_libuv.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_nuttx_libuv.o: ..\lvgl\src\drivers\nuttx\../../../src/core/../draw/lv_draw_arc.h
 computer_sim\lv_nuttx_libuv.o: ..\lvgl\src\drivers\nuttx\../../../src/core/../draw/lv_draw_triangle.h
 computer_sim\lv_nuttx_libuv.o: ..\lvgl\src\drivers\nuttx\../../../src/core/../draw/lv_draw_blur.h

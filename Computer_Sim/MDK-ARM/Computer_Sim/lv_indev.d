@@ -61,6 +61,7 @@ computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../draw/../misc/lv_fs.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../draw/lv_draw_label.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../draw/lv_draw_image.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../draw/lv_draw_line.h
+computer_sim\lv_indev.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../draw/lv_draw_arc.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../draw/lv_draw_triangle.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../draw/lv_draw_blur.h
@@ -73,6 +74,9 @@ computer_sim\lv_indev.o: ..\lvgl\src\indev\../misc/lv_area_private.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../misc/lv_anim_private.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/lv_obj_draw_private.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../display/lv_display_private.h
+computer_sim\lv_indev.o: ..\lvgl\src\indev\../display/../debugging/sysmon/lv_sysmon_private.h
+computer_sim\lv_indev.o: ..\lvgl\src\indev\../display/../debugging/sysmon/lv_sysmon.h
+computer_sim\lv_indev.o: ..\lvgl\src\indev\../display/../debugging/sysmon/../../core/lv_observer.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/lv_global.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../draw/sw/lv_draw_sw.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../draw/sw/../lv_draw_vector.h
@@ -95,8 +99,6 @@ computer_sim\lv_indev.o: ../FreeRTOS/include/task.h
 computer_sim\lv_indev.o: ../FreeRTOS/include/list.h
 computer_sim\lv_indev.o: ../FreeRTOS/include/semphr.h
 computer_sim\lv_indev.o: ../FreeRTOS/include/queue.h
-computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../debugging/sysmon/lv_sysmon.h
-computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../debugging/sysmon/../../core/lv_observer.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../stdlib/builtin/lv_tlsf.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../misc/lv_timer_private.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../tick/lv_tick_private.h
@@ -116,7 +118,6 @@ computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../draw/sw/lv_draw_sw_private
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../draw/sw/lv_draw_sw_mask_private.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../stdlib/builtin/lv_tlsf_private.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../stdlib/builtin/lv_tlsf.h
-computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../debugging/sysmon/lv_sysmon_private.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../debugging/test/lv_test_private.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/../layouts/lv_layout_private.h
 computer_sim\lv_indev.o: ..\lvgl\src\indev\../core/lv_obj_private.h

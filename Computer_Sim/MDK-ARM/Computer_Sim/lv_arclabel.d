@@ -59,6 +59,7 @@ computer_sim\lv_arclabel.o: ..\lvgl\src\widgets\arclabel\../../core/../draw/../m
 computer_sim\lv_arclabel.o: ..\lvgl\src\widgets\arclabel\../../core/../draw/lv_draw_label.h
 computer_sim\lv_arclabel.o: ..\lvgl\src\widgets\arclabel\../../core/../draw/lv_draw_image.h
 computer_sim\lv_arclabel.o: ..\lvgl\src\widgets\arclabel\../../core/../draw/lv_draw_line.h
+computer_sim\lv_arclabel.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_arclabel.o: ..\lvgl\src\widgets\arclabel\../../core/../draw/lv_draw_arc.h
 computer_sim\lv_arclabel.o: ..\lvgl\src\widgets\arclabel\../../core/../draw/lv_draw_triangle.h
 computer_sim\lv_arclabel.o: ..\lvgl\src\widgets\arclabel\../../core/../draw/lv_draw_blur.h
@@ -72,3 +73,4 @@ computer_sim\lv_arclabel.o: ..\lvgl\src\widgets\arclabel\../../core/lv_obj_class
 computer_sim\lv_arclabel.o: ..\lvgl\src\widgets\arclabel\../../core/lv_obj_event_private.h
 computer_sim\lv_arclabel.o: ..\lvgl\src\widgets\arclabel\../../misc/lv_area_private.h
 computer_sim\lv_arclabel.o: ..\lvgl\src\widgets\arclabel\../../misc/lv_text_private.h
+computer_sim\lv_arclabel.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h

@@ -34,7 +34,20 @@
 #include "sram.h"
 #include "lvgl.h"
 #include "SYS/DEBUG/debug.h"
-//#include "rtc.h"
+#include "sdio_sdcard.h"
+#include "led.h"
+#include "key.h"
+#include "w25qxx.h"
+#include "ff.h"
+#include "exfuns.h"
+#include "string.h"
+#include "rtc.h"
+#include "sram.h"
+#include "malloc.h"
+#include "tpad.h"
+#include "ScreenPower.h"
+#include "SystemSettings.h"
+#include "wm8978.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -101,11 +114,23 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
 	HAL_TIM_Base_Start_IT(&htim3);
-	FSMC_SRAM_Init();
 	delay_init(168); 
-
+	uart_init(115200);
+	SRAM_Init();
+	WM8978_Init();					//初始化WM8978
+	my_mem_init(SRAMIN);			//初始化内部内存池
+	my_mem_init(SRAMEX);			//初始化外部内存池
 //	LOG_init();
+	exfuns_init();					//为fatfs相关变量申请内存  
+ 	f_mount(fs[0],"0:",1); 			//挂载SD卡 
+	LCD_Init();
+	SystemSettings_Init();
+	RTC_Init();
+//	RTC_Set_Time(17, 8, 0, RTC_HOURFORMAT12_AM);
+//	RTC_Set_Date(26, 11, 1, RTC_WEEKDAY_SUNDAY);
+	TPAD_Init(8);                   //初始化触摸按键
 	lv_init();
+	ScreenPower_Init(SCREEN_POWER_DEFAULT_TIMEOUT_MS);
 
   freertos_start();
 

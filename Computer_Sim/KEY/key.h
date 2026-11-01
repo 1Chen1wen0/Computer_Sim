@@ -21,6 +21,7 @@
 //#define WK_UP       PAin(0) //WKUP按键PA0
 
 
+
 //下面的方式是通过直接操作HAL库函数方式读取IO
 #define KEY0        HAL_GPIO_ReadPin(GPIOE,GPIO_PIN_4)  //KEY0按键PE4
 #define KEY1        HAL_GPIO_ReadPin(GPIOE,GPIO_PIN_3)  //KEY1按键PE3

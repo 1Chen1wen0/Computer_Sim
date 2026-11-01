@@ -1,28 +1,30 @@
-#ifndef __SRAM_H
-#define __SRAM_H															    
-#include "sys.h" 
+#ifndef _SDRAM_H
+#define _SDRAM_H
+#include "sys.h"
 //////////////////////////////////////////////////////////////////////////////////	 
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
-//ALIENTEK战舰STM32开发板
-//外部SRAM 驱动代码	   
+//ALIENTEK STM32F407开发板
+//SDRAM驱动代码	   
 //正点原子@ALIENTEK
 //技术论坛:www.openedv.com
-//修改日期:2012/9/16
+//创建日期:2017/4/18
 //版本：V1.0
 //版权所有，盗版必究。
-//Copyright(C) 广州市星翼电子科技有限公司 2009-2019
+//Copyright(C) 广州市星翼电子科技有限公司 2014-2024
 //All rights reserved									  
-//////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////// 	
 
-											  
-void FSMC_SRAM_Init(void);
-void FSMC_SRAM_WriteBuffer(u8* pBuffer,u32 WriteAddr,u32 NumHalfwordToWrite);
-void FSMC_SRAM_ReadBuffer(u8* pBuffer,u32 ReadAddr,u32 NumHalfwordToRead);
+extern SRAM_HandleTypeDef SRAM_Handler;    //SRAM句柄
 
-
-void fsmc_sram_test_write(u32 addr,u8 data);
-u8 fsmc_sram_test_read(u32 addr);
+//使用NOR/SRAM的 Bank1.sector3,地址位HADDR[27,26]=10 
+//对IS61LV25616/IS62WV25616,地址线范围为A0~A17 
+//对IS61LV51216/IS62WV51216,地址线范围为A0~A18
+#define Bank1_SRAM3_ADDR    ((u32)(0x68000000))	
 
 
+void SRAM_Init(void);
+void FSMC_SRAM_WriteBuffer(u8 *pBuffer,u32 WriteAddr,u32 n);
+void FSMC_SRAM_ReadBuffer(u8 *pBuffer,u32 ReadAddr,u32 n);
 #endif
+
 

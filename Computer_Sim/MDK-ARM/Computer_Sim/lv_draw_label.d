@@ -88,6 +88,7 @@ computer_sim\lv_draw_label.o: ..\lvgl\src\draw\../core/lv_obj_style_gen.h
 computer_sim\lv_draw_label.o: ..\lvgl\src\draw\../core/../core/lv_obj_style.h
 computer_sim\lv_draw_label.o: ..\lvgl\src\draw\../core/lv_obj_draw.h
 computer_sim\lv_draw_label.o: ..\lvgl\src\draw\../core/../draw/lv_draw_line.h
+computer_sim\lv_draw_label.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_draw_label.o: ..\lvgl\src\draw\../core/../draw/lv_draw_arc.h
 computer_sim\lv_draw_label.o: ..\lvgl\src\draw\../core/../draw/lv_draw_triangle.h
 computer_sim\lv_draw_label.o: ..\lvgl\src\draw\../core/../draw/lv_draw_blur.h

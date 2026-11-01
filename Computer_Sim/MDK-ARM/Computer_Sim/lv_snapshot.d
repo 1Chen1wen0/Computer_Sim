@@ -76,6 +76,7 @@ computer_sim\lv_snapshot.o: ..\lvgl\src\draw\snapshot\../../core/../draw/lv_draw
 computer_sim\lv_snapshot.o: ..\lvgl\src\draw\snapshot\../../core/../draw/lv_draw_label.h
 computer_sim\lv_snapshot.o: ..\lvgl\src\draw\snapshot\../../core/../draw/lv_draw_image.h
 computer_sim\lv_snapshot.o: ..\lvgl\src\draw\snapshot\../../core/../draw/lv_draw_line.h
+computer_sim\lv_snapshot.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_snapshot.o: ..\lvgl\src\draw\snapshot\../../core/../draw/lv_draw_arc.h
 computer_sim\lv_snapshot.o: ..\lvgl\src\draw\snapshot\../../core/../draw/lv_draw_triangle.h
 computer_sim\lv_snapshot.o: ..\lvgl\src\draw\snapshot\../../core/../draw/lv_draw_blur.h

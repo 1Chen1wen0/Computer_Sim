@@ -18,6 +18,25 @@
 
 u16 W25QXX_TYPE=W25Q256;	//默认是W25Q256
 
+u32 W25QXX_GetCapacity(void)
+{
+	switch(W25QXX_TYPE)
+	{
+		case W25Q80:   return 1UL*1024UL*1024UL;
+		case W25Q16:
+		case NM25Q16:  return 2UL*1024UL*1024UL;
+		case W25Q32:
+		case NM25Q32:  return 4UL*1024UL*1024UL;
+		case W25Q64:
+		case NM25Q64:  return 8UL*1024UL*1024UL;
+		case W25Q128:
+		case NM25Q128: return 16UL*1024UL*1024UL;
+		case W25Q256:
+		case NM25Q256: return 32UL*1024UL*1024UL;
+		default:      return 0UL;
+	}
+}
+
 //4Kbytes为一个Sector
 //16个扇区为1个Block
 //W25Q256

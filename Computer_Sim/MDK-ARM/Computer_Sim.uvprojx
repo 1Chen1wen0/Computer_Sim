@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx,USE_USB_OTG_FS,LV_CONF_INCLUDE_SIMPLE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../FreeRTOS/include;../FreeRTOS/portable/MemMang;../FreeRTOS/portable/RVDS/ARM_CM4F;../../Computer_Sim;../LCD;../USB/STM32_USB_HOST_Library/Class/HID/inc;../USB/STM32_USB_HOST_Library/Core/inc;../USB/STM32_USB_OTG_Driver/inc;../USB/USB_APP;../lvgl;../lvgl/examples/porting;../lvgl/src;../SRAM;../lvgl/demos;../lvgl/demos/widgets;../SDIO;../FATFS/src;../FATFS/exfuns;../MALLOC;../W25QXX;../SPI;../USMART;..\usart;..\I2S;..\WM8978;..\IIC;..\RTC;..\LED;..\KEY</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../FreeRTOS/include;../FreeRTOS/portable/MemMang;../FreeRTOS/portable/RVDS/ARM_CM4F;../../Computer_Sim;../LCD;../USB/STM32_USB_HOST_Library/Class/HID/inc;../USB/STM32_USB_HOST_Library/Core/inc;../USB/STM32_USB_OTG_Driver/inc;../USB/USB_APP;../lvgl;../lvgl/examples/porting;../lvgl/src;../SRAM;../lvgl/demos;../lvgl/demos/widgets;../SDIO;../FATFS/src;../FATFS/exfuns;../MALLOC;../W25QXX;../SPI;../USMART;..\usart;..\I2S;..\WM8978;..\IIC;..\RTC;..\LED;..\KEY;..\XMRAM;..\UI;..\TPAD;..\AUDIOCODEC\wav;..\Audio;..\TEXT</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -3092,6 +3092,11 @@
               <FileType>1</FileType>
               <FilePath>..\MALLOC\malloc.c</FilePath>
             </File>
+            <File>
+              <FileName>malloc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\MALLOC\malloc.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -3246,6 +3251,156 @@
               <FileName>rtc.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\RTC\rtc.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>XMRAM</GroupName>
+          <Files>
+            <File>
+              <FileName>XMRAM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\XMRAM\XMRAM.h</FilePath>
+            </File>
+            <File>
+              <FileName>XMRAM.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>..\XMRAM\XMRAM.lib</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>UI</GroupName>
+          <Files>
+            <File>
+              <FileName>KeyboardInput.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UI\KeyboardInput.c</FilePath>
+            </File>
+            <File>
+              <FileName>KeyboardInput.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UI\KeyboardInput.h</FilePath>
+            </File>
+            <File>
+              <FileName>Password.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UI\Password.c</FilePath>
+            </File>
+            <File>
+              <FileName>Password.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UI\Password.h</FilePath>
+            </File>
+            <File>
+              <FileName>ScreenPower.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UI\ScreenPower.c</FilePath>
+            </File>
+            <File>
+              <FileName>ScreenPower.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UI\ScreenPower.h</FilePath>
+            </File>
+            <File>
+              <FileName>desktop.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UI\desktop.c</FilePath>
+            </File>
+            <File>
+              <FileName>desktop.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UI\desktop.h</FilePath>
+            </File>
+            <File>
+              <FileName>DesktopUI.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UI\DesktopUI.c</FilePath>
+            </File>
+            <File>
+              <FileName>DesktopUI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UI\DesktopUI.h</FilePath>
+            </File>
+            <File>
+              <FileName>SystemSettings.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UI\SystemSettings.c</FilePath>
+            </File>
+            <File>
+              <FileName>SystemSettings.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UI\SystemSettings.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>TPAD</GroupName>
+          <Files>
+            <File>
+              <FileName>tpad.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\TPAD\tpad.c</FilePath>
+            </File>
+            <File>
+              <FileName>tpad.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\TPAD\tpad.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>wavplay</GroupName>
+          <Files>
+            <File>
+              <FileName>wavplay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\AUDIOCODEC\wav\wavplay.c</FilePath>
+            </File>
+            <File>
+              <FileName>wavplay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\AUDIOCODEC\wav\wavplay.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Audio</GroupName>
+          <Files>
+            <File>
+              <FileName>audioplay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Audio\audioplay.c</FilePath>
+            </File>
+            <File>
+              <FileName>audioplay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Audio\audioplay.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Text</GroupName>
+          <Files>
+            <File>
+              <FileName>fontupd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\TEXT\fontupd.c</FilePath>
+            </File>
+            <File>
+              <FileName>fontupd.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\TEXT\fontupd.h</FilePath>
+            </File>
+            <File>
+              <FileName>text.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\TEXT\text.c</FilePath>
+            </File>
+            <File>
+              <FileName>text.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\TEXT\text.h</FilePath>
             </File>
           </Files>
         </Group>

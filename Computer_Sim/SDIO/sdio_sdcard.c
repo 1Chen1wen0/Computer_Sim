@@ -141,6 +141,22 @@ u8 SD_GetCardState(void)
   return((HAL_SD_GetCardState(&SDCARD_Handler)==HAL_SD_CARD_TRANSFER )?SD_TRANSFER_OK:SD_TRANSFER_BUSY);
 }
 
+static u8 SD_WaitReady(uint32_t timeout_ms)
+{
+	uint32_t start_tick=HAL_GetTick();
+
+	while(SD_GetCardState()!=SD_TRANSFER_OK)
+	{
+		if((HAL_GetTick()-start_tick)>=timeout_ms)
+		{
+			return (u8)HAL_TIMEOUT;
+		}
+		HAL_Delay(1U);
+	}
+
+	return (u8)HAL_OK;
+}
+
  #if (SD_DMA_MODE==1)        //DMA模式
 
 //通过DMA读取SD卡一个扇区
@@ -151,22 +167,15 @@ u8 SD_GetCardState(void)
 //返回值:错误状态;0,正常;其他,错误代码;
 u8 SD_ReadBlocks_DMA(uint32_t *buf,uint64_t sector,uint32_t blocksize,uint32_t cnt)
 {
-    u8 err=0;
-	u32 timeout=SD_TIMEOUT;
+	u8 err=0;
 	err=HAL_SD_ReadBlocks_DMA(&SDCARD_Handler,(uint8_t*)buf,sector,cnt);//通过DMA读取SD卡n个扇区
 
-	if(err==0)
+	if(err!=HAL_OK)
 	{
-		//等待SD卡读完
-		while(SD_GetCardState()!=SD_TRANSFER_OK)
-		{
-			if(timeout-- == 0)
-			{	
-				err=SD_TRANSFER_BUSY;
-			}
-		} 
+		return err;
 	}
-    return err;
+
+	return SD_WaitReady(SD_READY_TIMEOUT_MS);
 }
 
 //写SD卡
@@ -177,22 +186,15 @@ u8 SD_ReadBlocks_DMA(uint32_t *buf,uint64_t sector,uint32_t blocksize,uint32_t c
 //返回值:错误状态;0,正常;其他,错误代码;	
 u8 SD_WriteBlocks_DMA(uint32_t *buf,uint64_t sector,uint32_t blocksize,uint32_t cnt)
 {
-    u8 err=0; 
-	u32 timeout=SD_TIMEOUT;
+	u8 err=0;
 	err=HAL_SD_WriteBlocks_DMA(&SDCARD_Handler,(uint8_t*)buf,sector,cnt);//通过DMA写SD卡n个扇区
 
-	if(err==0)
+	if(err!=HAL_OK)
 	{
-		//等待SD卡写完
-		while(SD_GetCardState()!=SD_TRANSFER_OK)
-		{
-			if(timeout-- == 0)
-			{	
-				err=SD_TRANSFER_BUSY;
-			}
-		} 
+		return err;
 	}
-    return err;
+
+	return SD_WaitReady(SD_READY_TIMEOUT_MS);
 }
 
 //读SD卡
@@ -202,14 +204,7 @@ u8 SD_WriteBlocks_DMA(uint32_t *buf,uint64_t sector,uint32_t blocksize,uint32_t 
 //返回值:错误状态;0,正常;其他,错误代码;
 u8 SD_ReadDisk(u8* buf,u32 sector,u32 cnt)
 {
-    u8 sta=HAL_OK;
-    long long lsector=sector;
-	u32 timeout=SD_TIMEOUT;
-    u8 n;
-	
-	sta=SD_ReadBlocks_DMA((uint32_t*)buf,lsector, 512,cnt);
-   
-    return sta;
+	return SD_ReadBlocks_DMA((uint32_t*)buf,(uint64_t)sector,512,cnt);
 }  
 
 //写SD卡
@@ -218,15 +213,8 @@ u8 SD_ReadDisk(u8* buf,u32 sector,u32 cnt)
 //cnt:扇区个数	
 //返回值:错误状态;0,正常;其他,错误代码;	
 u8 SD_WriteDisk(u8 *buf,u32 sector,u32 cnt)
-{   
-    u8 sta=HAL_OK;
-    long long lsector=sector;
-	u32 timeout=SD_TIMEOUT;
-    u8 n;
-
-	sta=SD_WriteBlocks_DMA((uint32_t*)buf,lsector,512,cnt);//多个sector的写操作
-
-    return sta;
+{
+	return SD_WriteBlocks_DMA((uint32_t*)buf,(uint64_t)sector,512,cnt);//多个sector的写操作
 } 
 
 //SDMMC1中断服务函数
@@ -255,22 +243,15 @@ void DMA2_Stream3_IRQHandler(void)
 //返回值:错误状态;0,正常;其他,错误代码;
 u8 SD_ReadDisk(u8* buf,u32 sector,u32 cnt)
 {
-    u8 sta=HAL_OK;
-	u32 timeout=SD_TIMEOUT;
-    long long lsector=sector;
-    INTX_DISABLE();//关闭总中断(POLLING模式,严禁中断打断SDIO读写操作!!!)
-	sta=HAL_SD_ReadBlocks(&SDCARD_Handler, (uint8_t*)buf,lsector,cnt,SD_TIMEOUT);//多个sector的读操作
-	
-	//等待SD卡读完
-	while(SD_GetCardState()!=SD_TRANSFER_OK)
-    {
-		if(timeout-- == 0)
-		{	
-			sta=SD_TRANSFER_BUSY;
-		}
-    }
-    INTX_ENABLE();//开启总中断
-    return sta;
+	u8 sta;
+
+	sta=HAL_SD_ReadBlocks(&SDCARD_Handler,(uint8_t*)buf,(uint64_t)sector,cnt,SD_DATA_TIMEOUT_MS);//多个sector的读操作
+	if(sta!=HAL_OK)
+	{
+		return sta;
+	}
+
+	return SD_WaitReady(SD_READY_TIMEOUT_MS);
 }  
 
 
@@ -280,22 +261,15 @@ u8 SD_ReadDisk(u8* buf,u32 sector,u32 cnt)
 //cnt:扇区个数	
 //返回值:错误状态;0,正常;其他,错误代码;	
 u8 SD_WriteDisk(u8 *buf,u32 sector,u32 cnt)
-{   
-    u8 sta=HAL_OK;
-	u32 timeout=SD_TIMEOUT;
-    long long lsector=sector;
-    INTX_DISABLE();//关闭总中断(POLLING模式,严禁中断打断SDIO读写操作!!!)
-	sta=HAL_SD_WriteBlocks(&SDCARD_Handler,(uint8_t*)buf,lsector,cnt,SD_TIMEOUT);//多个sector的写操作
-		
-	//等待SD卡写完
-	while(SD_GetCardState()!=SD_TRANSFER_OK)
-    {
-		if(timeout-- == 0)
-		{	
-			sta=SD_TRANSFER_BUSY;
-		}
-    }    
-	INTX_ENABLE();//开启总中断
-    return sta;
+{
+	u8 sta;
+
+	sta=HAL_SD_WriteBlocks(&SDCARD_Handler,(uint8_t*)buf,(uint64_t)sector,cnt,SD_DATA_TIMEOUT_MS);//多个sector的写操作
+	if(sta!=HAL_OK)
+	{
+		return sta;
+	}
+
+	return SD_WaitReady(SD_READY_TIMEOUT_MS);
 }
 #endif

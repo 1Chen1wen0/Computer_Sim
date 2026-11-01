@@ -1,0 +1,14 @@
+computer_sim\keyboardinput.o: ..\UI\KeyboardInput.c
+computer_sim\keyboardinput.o: ..\UI\KeyboardInput.h
+computer_sim\keyboardinput.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+computer_sim\keyboardinput.o: ../FreeRTOS/include/FreeRTOS.h
+computer_sim\keyboardinput.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+computer_sim\keyboardinput.o: ../Core/Inc/FreeRTOSConfig.h
+computer_sim\keyboardinput.o: ../FreeRTOS/include/projdefs.h
+computer_sim\keyboardinput.o: ../FreeRTOS/include/portable.h
+computer_sim\keyboardinput.o: ../FreeRTOS/include/deprecated_definitions.h
+computer_sim\keyboardinput.o: ../FreeRTOS/portable/RVDS/ARM_CM4F/portmacro.h
+computer_sim\keyboardinput.o: ../FreeRTOS/include/mpu_wrappers.h
+computer_sim\keyboardinput.o: ../FreeRTOS/include/queue.h
+computer_sim\keyboardinput.o: ../FreeRTOS/include/task.h
+computer_sim\keyboardinput.o: ../FreeRTOS/include/list.h

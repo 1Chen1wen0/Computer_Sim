@@ -55,6 +55,7 @@ computer_sim\lv_font_fmt_txt.o: ..\lvgl\src\font\fmt_txt\../../core/../draw/sw/.
 computer_sim\lv_font_fmt_txt.o: ..\lvgl\src\font\fmt_txt\../../core/../draw/sw/../lv_draw_rect.h
 computer_sim\lv_font_fmt_txt.o: ..\lvgl\src\font\fmt_txt\../../core/../draw/sw/../lv_draw_label.h
 computer_sim\lv_font_fmt_txt.o: ..\lvgl\src\font\fmt_txt\../../core/../draw/sw/../lv_draw_line.h
+computer_sim\lv_font_fmt_txt.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_font_fmt_txt.o: ..\lvgl\src\font\fmt_txt\../../core/../draw/sw/../lv_draw_mask.h
 computer_sim\lv_font_fmt_txt.o: ..\lvgl\src\font\fmt_txt\../../core/../draw/sw/../lv_draw_arc.h
 computer_sim\lv_font_fmt_txt.o: ..\lvgl\src\font\fmt_txt\../../core/../draw/sw/../lv_draw_blur.h

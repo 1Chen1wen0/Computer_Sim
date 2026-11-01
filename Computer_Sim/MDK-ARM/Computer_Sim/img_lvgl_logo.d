@@ -69,6 +69,7 @@ computer_sim\img_lvgl_logo.o: ../../Computer_Sim/lvgl/src/core/../draw/../misc/l
 computer_sim\img_lvgl_logo.o: ../../Computer_Sim/lvgl/src/core/../draw/lv_draw_label.h
 computer_sim\img_lvgl_logo.o: ../../Computer_Sim/lvgl/src/core/../draw/lv_draw_image.h
 computer_sim\img_lvgl_logo.o: ../../Computer_Sim/lvgl/src/core/../draw/lv_draw_line.h
+computer_sim\img_lvgl_logo.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\img_lvgl_logo.o: ../../Computer_Sim/lvgl/src/core/../draw/lv_draw_arc.h
 computer_sim\img_lvgl_logo.o: ../../Computer_Sim/lvgl/src/core/../draw/lv_draw_triangle.h
 computer_sim\img_lvgl_logo.o: ../../Computer_Sim/lvgl/src/core/../draw/lv_draw_blur.h

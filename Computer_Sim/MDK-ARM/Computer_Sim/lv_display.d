@@ -58,6 +58,7 @@ computer_sim\lv_display.o: ..\lvgl\src\display\../display/../core/../draw/../mis
 computer_sim\lv_display.o: ..\lvgl\src\display\../display/../core/../draw/lv_draw_label.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../display/../core/../draw/lv_draw_image.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../display/../core/../draw/lv_draw_line.h
+computer_sim\lv_display.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../display/../core/../draw/lv_draw_arc.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../display/../core/../draw/lv_draw_triangle.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../display/../core/../draw/lv_draw_blur.h
@@ -66,6 +67,9 @@ computer_sim\lv_display.o: ..\lvgl\src\display\../display/../core/lv_obj_propert
 computer_sim\lv_display.o: ..\lvgl\src\display\../display/../core/lv_obj_event.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../display/../core/../indev/lv_indev.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../display/../core/../indev/../core/lv_group.h
+computer_sim\lv_display.o: ..\lvgl\src\display\../display/../debugging/sysmon/lv_sysmon_private.h
+computer_sim\lv_display.o: ..\lvgl\src\display\../display/../debugging/sysmon/lv_sysmon.h
+computer_sim\lv_display.o: ..\lvgl\src\display\../display/../debugging/sysmon/../../core/lv_observer.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../misc/lv_event_private.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../misc/lv_anim_private.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../draw/lv_draw_private.h
@@ -109,8 +113,6 @@ computer_sim\lv_display.o: ..\lvgl\src\display\../core/../draw/sw/../lv_draw_mas
 computer_sim\lv_display.o: ..\lvgl\src\display\../core/../draw/sw/lv_draw_sw_utils.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../core/../draw/sw/blend/lv_draw_sw_blend.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../core/../draw/sw/blend/../lv_draw_sw_mask.h
-computer_sim\lv_display.o: ..\lvgl\src\display\../core/../debugging/sysmon/lv_sysmon.h
-computer_sim\lv_display.o: ..\lvgl\src\display\../core/../debugging/sysmon/../../core/lv_observer.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../core/../stdlib/builtin/lv_tlsf.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../core/../misc/lv_timer_private.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../core/../tick/lv_tick_private.h
@@ -119,6 +121,5 @@ computer_sim\lv_display.o: ..\lvgl\src\display\../core/../draw/sw/lv_draw_sw_pri
 computer_sim\lv_display.o: ..\lvgl\src\display\../core/../draw/sw/lv_draw_sw_mask_private.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../core/../stdlib/builtin/lv_tlsf_private.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../core/../stdlib/builtin/lv_tlsf.h
-computer_sim\lv_display.o: ..\lvgl\src\display\../core/../debugging/sysmon/lv_sysmon_private.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../core/../debugging/test/lv_test_private.h
 computer_sim\lv_display.o: ..\lvgl\src\display\../core/../layouts/lv_layout_private.h

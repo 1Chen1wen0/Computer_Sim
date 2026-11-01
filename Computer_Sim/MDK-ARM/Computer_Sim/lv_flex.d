@@ -58,6 +58,7 @@ computer_sim\lv_flex.o: ..\lvgl\src\layouts\flex\../../core/../draw/../misc/lv_f
 computer_sim\lv_flex.o: ..\lvgl\src\layouts\flex\../../core/../draw/lv_draw_label.h
 computer_sim\lv_flex.o: ..\lvgl\src\layouts\flex\../../core/../draw/lv_draw_image.h
 computer_sim\lv_flex.o: ..\lvgl\src\layouts\flex\../../core/../draw/lv_draw_line.h
+computer_sim\lv_flex.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_flex.o: ..\lvgl\src\layouts\flex\../../core/../draw/lv_draw_arc.h
 computer_sim\lv_flex.o: ..\lvgl\src\layouts\flex\../../core/../draw/lv_draw_triangle.h
 computer_sim\lv_flex.o: ..\lvgl\src\layouts\flex\../../core/../draw/lv_draw_blur.h

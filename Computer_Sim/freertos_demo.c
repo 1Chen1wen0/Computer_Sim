@@ -2,7 +2,6 @@
 /* freertos相关的头文件，必须的 */
 #include "FreeRTOS.h"
 #include "task.h"
-
 /* 需要用到的其他头文件 */
 #include "main.h"
 #include "usart.h"
@@ -16,8 +15,25 @@
 #include "sram.h"
 #include "lvgl.h"
 #include "SYS/DEBUG/debug.h"
+#include "sdio_sdcard.h"
+#include "led.h"
+#include "key.h"
+#include "w25qxx.h"
+#include "ff.h"
+#include "exfuns.h"
+#include "string.h"
+#include "rtc.h"
+#include "sram.h"
+#include "malloc.h"
+#include "Password.h"
+#include "tpad.h"
+#include "SystemSettings.h"
+extern volatile int32_t g_mouse_x;
+extern volatile int32_t g_mouse_y;
+extern volatile uint8_t g_mouse_pressed;
+extern volatile uint8_t g_tpad_mouse_pressed;
 /* 启动任务的配置 */
-#define START_TASK_STACK 128
+#define START_TASK_STACK 1024
 #define START_TASK_PRIORITY 4
 TaskHandle_t start_task_handle;
 StackType_t start_task_stack[START_TASK_STACK]; // 静态任务的任务栈，以数组形式存储
@@ -33,15 +49,15 @@ StaticTask_t task1_tcb;               // 静态任务的TCB结构体类型
 void task1(void *pvParameters);
 
 /* 任务2的配置 */
-#define TASK2_STACK 512
-#define TASK2_PRIORITY 3
+#define TASK2_STACK 3072
+#define TASK2_PRIORITY 2
 TaskHandle_t task2_handle;
 StackType_t task2_stack[TASK2_STACK]; // 静态任务的任务栈，以数组形式存储
 StaticTask_t task2_tcb;               // 静态任务的TCB结构体类型
 void task2(void *pvParameters);
 
 /* 任务3的配置 */
-#define TASK3_STACK 256
+#define TASK3_STACK 128
 #define TASK3_PRIORITY 1
 TaskHandle_t task3_handle;
 StackType_t task3_stack[TASK3_STACK]; // 静态任务的任务栈，以数组形式存储
@@ -92,8 +108,7 @@ void USBH_Msg_Show(u8 msgx)
 	switch(msgx)
 	{
 		case 0:	//USB无连接
-			LCD_ShowString(30,130,200,16,16,"USB Connecting...");	
-			LCD_Fill(0,150,lcddev.width,lcddev.height,WHITE);
+			LCD_ShowString(30,400,200,16,16,"USB Lost");	
 			break;
 		case 1:	//USB键盘
 			LCD_ShowString(30,130,200,16,16,"USB Connected    ");	
@@ -140,7 +155,6 @@ void USBH_HID_Reconnect(void)
 }
 
 
-
 /**
  * @description: 启动FreeRTOS
  * @return {*}
@@ -170,20 +184,16 @@ void freertos_start(void)
  */
 void start_task(void *pvParameters)
 {	
+	KEY_Init();
+	TPAD_Init(6);
+
 	extern void lv_port_disp_init(void);
 	lv_port_disp_init();
 	extern void lv_port_indev_init(void);
 	lv_port_indev_init();
-
+	Password_ui_create();
 	
-POINT_COLOR=RED;
-LCD_ShowString(30,50,200,16,16,"Explorer STM32F4");	
-//LCD_ShowString(30,70,200,16,16,"USB MOUSE/KEYBOARD TEST");	
-//LCD_ShowString(30,90,200,16,16,"ATOM@ALIENTEK");
-//LCD_ShowString(30,110,200,16,16,"2017/5/16");	 
-//LCD_ShowString(30,130,200,16,16,"USB Connecting...");	  
 USBH_Init(&USB_OTG_Core_dev,USB_OTG_FS_CORE_ID,&USB_Host,&HID_cb,&USR_Callbacks); 
-
 	
     /* 进入临界区:保护临界区里的代码不会被打断 */
     taskENTER_CRITICAL();
@@ -253,7 +263,6 @@ void task1(void *pvParameters)
 			}			
 		}
 
-
         vTaskDelay(1);
     }
 }
@@ -268,8 +277,9 @@ void task2(void *pvParameters)
 	
     while (1)
     {
+	/*LVGL_demo*/
      lv_timer_handler();
-     vTaskDelay(5);
+     vTaskDelay(5); 
     }
 }
 
@@ -278,12 +288,38 @@ void task2(void *pvParameters)
  * @param {void} *pvParameters
  * @return {*}
  */
+
 void task3(void *pvParameters)
 {
+	u8 key_value;
+
     while (1)
     {
+		key_value = KEY_Scan(1);
+		if(key_value == KEY0_PRES)
+		{
+			g_mouse_x += SystemSettings_ScaleMouseDelta(5);
+		}
+		else if(key_value == KEY1_PRES)
+		{
+			g_mouse_y += SystemSettings_ScaleMouseDelta(7);
+		}
+		else if(key_value == KEY2_PRES)
+		{
+			g_mouse_x += SystemSettings_ScaleMouseDelta(-5);
+		}
+		else if(key_value == WKUP_PRES)
+		{
+			g_mouse_y += SystemSettings_ScaleMouseDelta(-7);
+		}
 
-        vTaskDelay(50);
-        // HAL_Delay(500); //这种delay不会让任务进入阻塞态，不会让出cpu使用权
+		if(g_mouse_x < 0) g_mouse_x = 0;
+		else if(g_mouse_x >= lcddev.width) g_mouse_x = lcddev.width - 1;
+		if(g_mouse_y < 0) g_mouse_y = 0;
+		else if(g_mouse_y >= lcddev.height) g_mouse_y = lcddev.height - 1;
+
+		/* The capacitive touch key acts as the mouse left button. */
+		g_tpad_mouse_pressed = TPAD_Scan(1) ? 1U : 0U;
+		vTaskDelay(pdMS_TO_TICKS(5));
     }
 }

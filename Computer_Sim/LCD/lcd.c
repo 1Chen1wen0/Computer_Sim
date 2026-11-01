@@ -726,7 +726,7 @@ void LCD_Init(void)
             }
 		}
 	}   
-	Serial_Printf(" LCD ID:%x\r\n",lcddev.id); //¥Ú”°LCD ID   
+	 
 	if(lcddev.id==0X9341)	//9341≥ı ºªØ
 	{	 
 		LCD_WR_REG(0xCF);  

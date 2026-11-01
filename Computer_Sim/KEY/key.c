@@ -1,5 +1,9 @@
 #include "key.h"
 #include "delay.h"
+#include "FreeRTOS.h"
+#include "task.h"
+
+
 //////////////////////////////////////////////////////////////////////////////////	 
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
 //ALIENTEK STM32F407开发板
@@ -12,6 +16,10 @@
 //Copyright(C) 广州市星翼电子科技有限公司 2014-2024
 //All rights reserved									  
 //////////////////////////////////////////////////////////////////////////////////
+volatile int32_t g_mouse_x;
+volatile int32_t g_mouse_y;
+volatile uint8_t g_mouse_pressed = 0;
+volatile uint8_t g_tpad_mouse_pressed = 0;
 
 //按键初始化函数
 void KEY_Init(void)
@@ -48,7 +56,8 @@ u8 KEY_Scan(u8 mode)
     if(mode==1)key_up=1;    //支持连按
     if(key_up&&(KEY0==0||KEY1==0||KEY2==0||WK_UP==1))
     {
-        delay_ms(10);
+//        delay_ms(10);
+		vTaskDelay(10);
         key_up=0;
         if(KEY0==0)       return KEY0_PRES;
         else if(KEY1==0)  return KEY1_PRES;

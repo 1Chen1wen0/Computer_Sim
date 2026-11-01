@@ -68,6 +68,7 @@ computer_sim\lv_os.o: ..\lvgl\src\osal\../core/../draw/sw/../lv_draw_triangle.h
 computer_sim\lv_os.o: ..\lvgl\src\osal\../core/../draw/sw/../lv_draw_rect.h
 computer_sim\lv_os.o: ..\lvgl\src\osal\../core/../draw/sw/../lv_draw_label.h
 computer_sim\lv_os.o: ..\lvgl\src\osal\../core/../draw/sw/../lv_draw_line.h
+computer_sim\lv_os.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_os.o: ..\lvgl\src\osal\../core/../draw/sw/../lv_draw_mask.h
 computer_sim\lv_os.o: ..\lvgl\src\osal\../core/../draw/sw/../lv_draw_arc.h
 computer_sim\lv_os.o: ..\lvgl\src\osal\../core/../draw/sw/../lv_draw_blur.h

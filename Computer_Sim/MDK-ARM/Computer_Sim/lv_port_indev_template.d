@@ -70,6 +70,7 @@ computer_sim\lv_port_indev_template.o: ../../Computer_Sim/lvgl/src/core/../draw/
 computer_sim\lv_port_indev_template.o: ../../Computer_Sim/lvgl/src/core/../draw/lv_draw_label.h
 computer_sim\lv_port_indev_template.o: ../../Computer_Sim/lvgl/src/core/../draw/lv_draw_image.h
 computer_sim\lv_port_indev_template.o: ../../Computer_Sim/lvgl/src/core/../draw/lv_draw_line.h
+computer_sim\lv_port_indev_template.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_port_indev_template.o: ../../Computer_Sim/lvgl/src/core/../draw/lv_draw_arc.h
 computer_sim\lv_port_indev_template.o: ../../Computer_Sim/lvgl/src/core/../draw/lv_draw_triangle.h
 computer_sim\lv_port_indev_template.o: ../../Computer_Sim/lvgl/src/core/../draw/lv_draw_blur.h
@@ -251,3 +252,4 @@ computer_sim\lv_port_indev_template.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32
 computer_sim\lv_port_indev_template.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 computer_sim\lv_port_indev_template.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h
 computer_sim\lv_port_indev_template.o: ../Drivers/CMSIS/Include/core_cm4.h
+computer_sim\lv_port_indev_template.o: ..\UI\KeyboardInput.h

@@ -144,6 +144,7 @@ computer_sim\freertos_demo.o: ../lvgl/src/core/../draw/../misc/lv_fs.h
 computer_sim\freertos_demo.o: ../lvgl/src/core/../draw/lv_draw_label.h
 computer_sim\freertos_demo.o: ../lvgl/src/core/../draw/lv_draw_image.h
 computer_sim\freertos_demo.o: ../lvgl/src/core/../draw/lv_draw_line.h
+computer_sim\freertos_demo.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\freertos_demo.o: ../lvgl/src/core/../draw/lv_draw_arc.h
 computer_sim\freertos_demo.o: ../lvgl/src/core/../draw/lv_draw_triangle.h
 computer_sim\freertos_demo.o: ../lvgl/src/core/../draw/lv_draw_blur.h
@@ -282,3 +283,16 @@ computer_sim\freertos_demo.o: ../lvgl/src/lv_api_map_v9_2.h
 computer_sim\freertos_demo.o: ../lvgl/src/lv_api_map_v9_3.h
 computer_sim\freertos_demo.o: ../lvgl/src/lv_api_map_v9_4.h
 computer_sim\freertos_demo.o: ..\SYS/DEBUG/debug.h
+computer_sim\freertos_demo.o: ../SDIO/sdio_sdcard.h
+computer_sim\freertos_demo.o: ..\LED\led.h
+computer_sim\freertos_demo.o: ..\KEY\key.h
+computer_sim\freertos_demo.o: ../W25QXX/w25qxx.h
+computer_sim\freertos_demo.o: ../FATFS/src/ff.h
+computer_sim\freertos_demo.o: ../FATFS/src/integer.h
+computer_sim\freertos_demo.o: ../FATFS/src/ffconf.h
+computer_sim\freertos_demo.o: ../FATFS/exfuns/exfuns.h
+computer_sim\freertos_demo.o: ..\RTC\rtc.h
+computer_sim\freertos_demo.o: ../MALLOC/malloc.h
+computer_sim\freertos_demo.o: ..\UI\Password.h
+computer_sim\freertos_demo.o: ..\TPAD\tpad.h
+computer_sim\freertos_demo.o: ..\UI\SystemSettings.h

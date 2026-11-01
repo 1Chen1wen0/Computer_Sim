@@ -65,3 +65,6 @@ computer_sim\usbh_usr.o: ../LCD/lcd.h
 computer_sim\usbh_usr.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 computer_sim\usbh_usr.o: D:\keil5\ARM\ARMCC\Bin\..\include\string.h
 computer_sim\usbh_usr.o: ..\usart\usart.h
+computer_sim\usbh_usr.o: ..\UI\KeyboardInput.h
+computer_sim\usbh_usr.o: ..\UI\SystemSettings.h
+computer_sim\usbh_usr.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h

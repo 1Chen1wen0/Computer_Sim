@@ -26,11 +26,23 @@
 #define SD_CARD	 	0  			//SD卡,卷标为0
 #define EX_FLASH 	1			//外部spi flash,卷标为1
 
-#define FLASH_SECTOR_SIZE 	512			  
+#define FLASH_SECTOR_SIZE 	512
+#define FLASH_SECTOR_COUNT_MAX (2048UL*12UL)
+#define FLASH_RESERVED_SECTORS (4096UL/FLASH_SECTOR_SIZE)
+#define SD_IO_MAX_RETRIES  3U
 //对于W25Q128
 //前12M字节给fatfs用,12M字节后,用于存放字库,字库占用3.09M.	剩余部分,给客户自己用	 			    
-u16	    FLASH_SECTOR_COUNT=2048*12;	//W25Q128,前12M字节给FATFS占用
 #define FLASH_BLOCK_SIZE   	8     	//每个BLOCK有8个扇区
+
+static DWORD W25QXX_FatFsSectorCount(void)
+{
+	DWORD sector_count=W25QXX_GetCapacity()/FLASH_SECTOR_SIZE;
+
+	if(sector_count<=FLASH_RESERVED_SECTORS)return 0;
+	sector_count-=FLASH_RESERVED_SECTORS;
+	if(sector_count>FLASH_SECTOR_COUNT_MAX)sector_count=FLASH_SECTOR_COUNT_MAX;
+	return sector_count;
+}
   
  
 //获得磁盘状态
@@ -73,20 +85,25 @@ DRESULT disk_read (
 	UINT count		/* Number of sectors to read */
 )
 {
-	u8 res=0; 
+	u8 res=0;
+	u8 retry;
     if (!count)return RES_PARERR;//count不能等于0，否则返回参数错误		 	 
 	switch(pdrv)
 	{
 		case SD_CARD://SD卡
-			res=SD_ReadDisk(buff,sector,count);	 
-			while(res)//读出错
+			for(retry=0;retry<SD_IO_MAX_RETRIES;retry++)
 			{
-				SD_Init();	//重新初始化SD卡
-				res=SD_ReadDisk(buff,sector,count);	
-				//printf("sd rd error:%d\r\n",res);
+				res=SD_ReadDisk(buff,sector,count);
+				if(res==HAL_OK)break;
 			}
 			break;
 		case EX_FLASH://外部flash
+			if(sector>=W25QXX_FatFsSectorCount() ||
+			   count>W25QXX_FatFsSectorCount()-sector)
+			{
+				res=1;
+				break;
+			}
 			for(;count>0;count--)
 			{
 				W25QXX_Read(buff,sector*FLASH_SECTOR_SIZE,FLASH_SECTOR_SIZE);
@@ -114,19 +131,25 @@ DRESULT disk_write (
 	UINT count			/* Number of sectors to write */
 )
 {
-	u8 res=0;  
+	u8 res=0;
+	u8 retry;
     if (!count)return RES_PARERR;//count不能等于0，否则返回参数错误		 	 
 	switch(pdrv)
 	{
 		case SD_CARD://SD卡
-			res=SD_WriteDisk((u8*)buff,sector,count);
-			while(res)//写出错
+			for(retry=0;retry<SD_IO_MAX_RETRIES;retry++)
 			{
-				SD_Init();	//重新初始化SD卡
-				res=SD_WriteDisk((u8*)buff,sector,count);	
+				res=SD_WriteDisk((u8*)buff,sector,count);
+				if(res==HAL_OK)break;
 			}
 			break;
 		case EX_FLASH://外部flash
+			if(sector>=W25QXX_FatFsSectorCount() ||
+			   count>W25QXX_FatFsSectorCount()-sector)
+			{
+				res=1;
+				break;
+			}
 			for(;count>0;count--)
 			{										    
 				W25QXX_Write((u8*)buff,sector*FLASH_SECTOR_SIZE,FLASH_SECTOR_SIZE);
@@ -192,7 +215,7 @@ DRESULT res;
 		        res = RES_OK;
 		        break;	 
 		    case GET_SECTOR_COUNT:
-		        *(DWORD*)buff = FLASH_SECTOR_COUNT;
+		        *(DWORD*)buff = W25QXX_FatFsSectorCount();
 		        res = RES_OK;
 		        break;
 		    default:

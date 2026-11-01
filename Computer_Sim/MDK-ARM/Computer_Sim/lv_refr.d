@@ -59,6 +59,7 @@ computer_sim\lv_refr.o: ..\lvgl\src\core\../draw/../misc/lv_fs.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../draw/lv_draw_label.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../draw/lv_draw_image.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../draw/lv_draw_line.h
+computer_sim\lv_refr.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../draw/lv_draw_arc.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../draw/lv_draw_triangle.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../draw/lv_draw_blur.h
@@ -75,6 +76,9 @@ computer_sim\lv_refr.o: ..\lvgl\src\core\../draw/lv_draw_mask.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\lv_obj_private.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\lv_obj_event_private.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../display/lv_display_private.h
+computer_sim\lv_refr.o: ..\lvgl\src\core\../display/../debugging/sysmon/lv_sysmon_private.h
+computer_sim\lv_refr.o: ..\lvgl\src\core\../display/../debugging/sysmon/lv_sysmon.h
+computer_sim\lv_refr.o: ..\lvgl\src\core\../display/../debugging/sysmon/../../core/lv_observer.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../misc/lv_timer_private.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../draw/lv_draw_private.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../draw/../osal/lv_os_private.h
@@ -107,8 +111,6 @@ computer_sim\lv_refr.o: ..\lvgl\src\core\../draw/sw/lv_draw_sw.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../draw/sw/../lv_draw_vector.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../draw/sw/lv_draw_sw_utils.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../draw/sw/blend/lv_draw_sw_blend.h
-computer_sim\lv_refr.o: ..\lvgl\src\core\../debugging/sysmon/lv_sysmon.h
-computer_sim\lv_refr.o: ..\lvgl\src\core\../debugging/sysmon/../../core/lv_observer.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../stdlib/builtin/lv_tlsf.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../misc/lv_anim_private.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../tick/lv_tick_private.h
@@ -116,6 +118,5 @@ computer_sim\lv_refr.o: ..\lvgl\src\core\../draw/lv_draw_buf_private.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../draw/sw/lv_draw_sw_private.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../stdlib/builtin/lv_tlsf_private.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../stdlib/builtin/lv_tlsf.h
-computer_sim\lv_refr.o: ..\lvgl\src\core\../debugging/sysmon/lv_sysmon_private.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../debugging/test/lv_test_private.h
 computer_sim\lv_refr.o: ..\lvgl\src\core\../layouts/lv_layout_private.h

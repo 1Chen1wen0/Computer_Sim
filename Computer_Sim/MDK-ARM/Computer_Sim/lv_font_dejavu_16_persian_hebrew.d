@@ -69,6 +69,7 @@ computer_sim\lv_font_dejavu_16_persian_hebrew.o: ..\lvgl\src\font\../../src/core
 computer_sim\lv_font_dejavu_16_persian_hebrew.o: ..\lvgl\src\font\../../src/core/../draw/lv_draw_label.h
 computer_sim\lv_font_dejavu_16_persian_hebrew.o: ..\lvgl\src\font\../../src/core/../draw/lv_draw_image.h
 computer_sim\lv_font_dejavu_16_persian_hebrew.o: ..\lvgl\src\font\../../src/core/../draw/lv_draw_line.h
+computer_sim\lv_font_dejavu_16_persian_hebrew.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_font_dejavu_16_persian_hebrew.o: ..\lvgl\src\font\../../src/core/../draw/lv_draw_arc.h
 computer_sim\lv_font_dejavu_16_persian_hebrew.o: ..\lvgl\src\font\../../src/core/../draw/lv_draw_triangle.h
 computer_sim\lv_font_dejavu_16_persian_hebrew.o: ..\lvgl\src\font\../../src/core/../draw/lv_draw_blur.h

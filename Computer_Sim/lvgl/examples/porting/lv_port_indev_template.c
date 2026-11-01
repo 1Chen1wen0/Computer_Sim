@@ -11,7 +11,12 @@
  *********************/
 #include "lv_port_indev_template.h"
 #include "BSP\touch\touch.h" /*Touchpad*/
+#include "KeyboardInput.h"
 
+extern volatile int32_t g_mouse_x;
+extern volatile int32_t g_mouse_y;
+extern volatile uint8_t g_mouse_pressed;
+extern volatile uint8_t g_tpad_mouse_pressed;
 /*********************
  *      DEFINES
  *********************/
@@ -87,41 +92,41 @@ void lv_port_indev_init(void)
      * -----------------*/
 
     /*Initialize your touchpad if you have*/
-    touchpad_init();
+//    touchpad_init();
 
     /*Register a touchpad input device*/
-    indev_touchpad = lv_indev_create();
-    lv_indev_set_type(indev_touchpad, LV_INDEV_TYPE_POINTER);
-    lv_indev_set_read_cb(indev_touchpad, touchpad_read);
+//    indev_touchpad = lv_indev_create();
+//    lv_indev_set_type(indev_touchpad, LV_INDEV_TYPE_POINTER);
+//    lv_indev_set_read_cb(indev_touchpad, touchpad_read);
 
     /*------------------
      * Mouse
      * -----------------*/
 
     /*Initialize your mouse if you have*/
-    // mouse_init();
+     mouse_init();
 
     // /*Register a mouse input device*/
-    // indev_mouse = lv_indev_create();
-    // lv_indev_set_type(indev_mouse, LV_INDEV_TYPE_POINTER);
-    // lv_indev_set_read_cb(indev_mouse, mouse_read);
+     indev_mouse = lv_indev_create();
+     lv_indev_set_type(indev_mouse, LV_INDEV_TYPE_POINTER);
+     lv_indev_set_read_cb(indev_mouse, mouse_read);
 
     /*Set cursor. For simplicity set a HOME symbol now.*/
-    // lv_obj_t * mouse_cursor = lv_image_create(lv_screen_active());
-    // lv_image_set_src(mouse_cursor, LV_SYMBOL_HOME);
-    // lv_indev_set_cursor(indev_mouse, mouse_cursor);
+     lv_obj_t * mouse_cursor = lv_image_create(lv_screen_active());
+     lv_image_set_src(mouse_cursor, LV_SYMBOL_HOME);
+     lv_indev_set_cursor(indev_mouse, mouse_cursor);
 
-    // /*------------------
-    //  * Keypad
-    //  * -----------------*/
+    /*------------------
+     * Keypad
+     * -----------------*/
 
-    // /*Initialize your keypad or keyboard if you have*/
-    // keypad_init();
+    /*Initialize your keypad or keyboard if you have*/
+    keypad_init();
 
-    // /*Register a keypad input device*/
-    // indev_keypad = lv_indev_create();
-    // lv_indev_set_type(indev_keypad, LV_INDEV_TYPE_KEYPAD);
-    // lv_indev_set_read_cb(indev_keypad, keypad_read);
+    /*Register a keypad input device*/
+    indev_keypad = lv_indev_create();
+    lv_indev_set_type(indev_keypad, LV_INDEV_TYPE_KEYPAD);
+    lv_indev_set_read_cb(indev_keypad, keypad_read);
 
     // /*Later you should create group(s) with `lv_group_t * group = lv_group_create()`,
     //  *add objects to the group with `lv_group_add_obj(group, obj)`
@@ -231,6 +236,11 @@ static void touchpad_get_xy(int32_t * x, int32_t * y)
 static void mouse_init(void)
 {
     /*Your code comes here*/
+	g_mouse_x = 120;
+	g_mouse_y = 160;
+	g_mouse_pressed = 0;
+	g_tpad_mouse_pressed = 0;
+	
 }
 
 /*Will be called by the library to read the mouse*/
@@ -253,7 +263,7 @@ static bool mouse_is_pressed(void)
 {
     /*Your code comes here*/
 
-    return false;
+    return g_mouse_pressed != 0 || g_tpad_mouse_pressed != 0;
 }
 
 /*Get the x and y coordinates if the mouse is pressed*/
@@ -261,8 +271,8 @@ static void mouse_get_xy(int32_t * x, int32_t * y)
 {
     /*Your code comes here*/
 
-    (*x) = 0;
-    (*y) = 0;
+    (*x) = g_mouse_x;
+    (*y) = g_mouse_y;
 }
 
 /*------------------
@@ -272,42 +282,50 @@ static void mouse_get_xy(int32_t * x, int32_t * y)
 /*Initialize your keypad*/
 static void keypad_init(void)
 {
-    /*Your code comes here*/
+    KeyboardInput_Init();
 }
 
-/*Will be called by the library to read the mouse*/
+/*Will be called by the library to read the keypad*/
 static void keypad_read(lv_indev_t * indev_drv, lv_indev_data_t * data)
 {
     static uint32_t last_key = 0;
+    static bool release_pending = false;
+    uint32_t act_key;
 
-    /*Get the current x and y coordinates*/
-    mouse_get_xy(&data->point.x, &data->point.y);
+    LV_UNUSED(indev_drv);
+
+    /* The USB host callback reports key presses only. Generate a release
+     * before delivering the next queued key to LVGL. */
+    if(release_pending) {
+        data->key = last_key;
+        data->state = LV_INDEV_STATE_RELEASED;
+        release_pending = false;
+        return;
+    }
 
     /*Get whether the a key is pressed and save the pressed key*/
-    uint32_t act_key = keypad_get_key();
-    if(act_key != 0) {
+    act_key = keypad_get_key();
+    if(act_key != 0U) {
         data->state = LV_INDEV_STATE_PRESSED;
 
-        /*Translate the keys to LVGL control characters according to your key definitions*/
+        /* The current USB key map emits CR for Backspace, LF for Enter,
+         * and TAB for focus navigation. Printable ASCII passes through. */
         switch(act_key) {
-            case 1:
+            case '\r':
+                act_key = LV_KEY_BACKSPACE;
+                break;
+            case '\n':
+                act_key = LV_KEY_ENTER;
+                break;
+            case '\t':
                 act_key = LV_KEY_NEXT;
                 break;
-            case 2:
-                act_key = LV_KEY_PREV;
-                break;
-            case 3:
-                act_key = LV_KEY_LEFT;
-                break;
-            case 4:
-                act_key = LV_KEY_RIGHT;
-                break;
-            case 5:
-                act_key = LV_KEY_ENTER;
+            default:
                 break;
         }
 
         last_key = act_key;
+        release_pending = true;
     }
     else {
         data->state = LV_INDEV_STATE_RELEASED;
@@ -319,9 +337,7 @@ static void keypad_read(lv_indev_t * indev_drv, lv_indev_data_t * data)
 /*Get the currently being pressed key.  0 if no key is pressed*/
 static uint32_t keypad_get_key(void)
 {
-    /*Your code comes here*/
-
-    return 0;
+    return KeyboardInput_GetKey();
 }
 
 /*------------------

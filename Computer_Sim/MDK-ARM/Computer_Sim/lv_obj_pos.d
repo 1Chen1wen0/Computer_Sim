@@ -59,6 +59,7 @@ computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../draw/../misc/lv_fs.h
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../draw/lv_draw_label.h
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../draw/lv_draw_image.h
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../draw/lv_draw_line.h
+computer_sim\lv_obj_pos.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../draw/lv_draw_arc.h
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../draw/lv_draw_triangle.h
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../draw/lv_draw_blur.h
@@ -72,6 +73,9 @@ computer_sim\lv_obj_pos.o: ..\lvgl\src\core\lv_obj_scroll.h
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\lv_obj_class.h
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\lv_obj_property.h
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../display/lv_display_private.h
+computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../display/../debugging/sysmon/lv_sysmon_private.h
+computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../display/../debugging/sysmon/lv_sysmon.h
+computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../display/../debugging/sysmon/../../core/lv_observer.h
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\lv_refr_private.h
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\lv_refr.h
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../core/lv_global.h
@@ -96,8 +100,6 @@ computer_sim\lv_obj_pos.o: ../FreeRTOS/include/task.h
 computer_sim\lv_obj_pos.o: ../FreeRTOS/include/list.h
 computer_sim\lv_obj_pos.o: ../FreeRTOS/include/semphr.h
 computer_sim\lv_obj_pos.o: ../FreeRTOS/include/queue.h
-computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../core/../debugging/sysmon/lv_sysmon.h
-computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../core/../debugging/sysmon/../../core/lv_observer.h
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../core/../stdlib/builtin/lv_tlsf.h
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../core/../misc/lv_timer_private.h
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../core/../misc/lv_anim_private.h
@@ -118,5 +120,4 @@ computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../core/../draw/sw/lv_draw_sw_privat
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../core/../draw/sw/lv_draw_sw_mask_private.h
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../core/../stdlib/builtin/lv_tlsf_private.h
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../core/../stdlib/builtin/lv_tlsf.h
-computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../core/../debugging/sysmon/lv_sysmon_private.h
 computer_sim\lv_obj_pos.o: ..\lvgl\src\core\../core/../debugging/test/lv_test_private.h

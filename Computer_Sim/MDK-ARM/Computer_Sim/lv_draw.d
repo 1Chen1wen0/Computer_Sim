@@ -83,6 +83,7 @@ computer_sim\lv_draw.o: ..\lvgl\src\draw\sw/../lv_draw_triangle.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\sw/../lv_draw_rect.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\sw/../lv_draw_label.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\sw/../lv_draw_line.h
+computer_sim\lv_draw.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\sw/../lv_draw_arc.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\sw/../lv_draw_blur.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\sw/lv_draw_sw_utils.h
@@ -102,9 +103,10 @@ computer_sim\lv_draw.o: ..\lvgl\src\draw\../display/../core/lv_obj_property.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\../display/../core/lv_obj_event.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\../display/../core/../indev/lv_indev.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\../display/../core/../indev/../core/lv_group.h
+computer_sim\lv_draw.o: ..\lvgl\src\draw\../display/../debugging/sysmon/lv_sysmon_private.h
+computer_sim\lv_draw.o: ..\lvgl\src\draw\../display/../debugging/sysmon/lv_sysmon.h
+computer_sim\lv_draw.o: ..\lvgl\src\draw\../display/../debugging/sysmon/../../core/lv_observer.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\../core/lv_global.h
-computer_sim\lv_draw.o: ..\lvgl\src\draw\../core/../debugging/sysmon/lv_sysmon.h
-computer_sim\lv_draw.o: ..\lvgl\src\draw\../core/../debugging/sysmon/../../core/lv_observer.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\../core/../stdlib/builtin/lv_tlsf.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\../core/../misc/lv_timer_private.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\../core/../misc/lv_anim_private.h
@@ -114,7 +116,6 @@ computer_sim\lv_draw.o: ..\lvgl\src\draw\../core/../draw/sw/lv_draw_sw_private.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\../core/../draw/sw/lv_draw_sw_mask_private.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\../core/../stdlib/builtin/lv_tlsf_private.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\../core/../stdlib/builtin/lv_tlsf.h
-computer_sim\lv_draw.o: ..\lvgl\src\draw\../core/../debugging/sysmon/lv_sysmon_private.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\../core/../debugging/test/lv_test_private.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\../core/../layouts/lv_layout_private.h
 computer_sim\lv_draw.o: ..\lvgl\src\draw\../core/lv_refr_private.h

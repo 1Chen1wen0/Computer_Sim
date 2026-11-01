@@ -5,6 +5,8 @@
 #include "lcd.h"  
 #include "string.h" 
 #include "usart.h"
+#include "KeyboardInput.h"
+#include "SystemSettings.h"
 //////////////////////////////////////////////////////////////////////////////////	 
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
 //ALIENTEK STM32开发板
@@ -30,6 +32,9 @@ vu8 bDeviceState=0;		//默认没有连接
 extern USB_OTG_CORE_HANDLE USB_OTG_Core_dev;
 extern void USBH_Msg_Show(u8 msgx);
 u8 USB_FIRST_PLUGIN_FLAG=0;	//USB第一次插入标志,如果为1,说明是第一次插入
+extern volatile int32_t g_mouse_x;
+extern volatile int32_t g_mouse_y;
+extern volatile uint8_t g_mouse_pressed;
 
 //USB OTG 中断服务函数
 //处理所有USB中断
@@ -159,7 +164,7 @@ void USBH_USR_EnumerationDone(void)
 //无法识别的USB设备
 void USBH_USR_DeviceNotSupported(void)
 { 
-	USBH_Msg_Show(3);//无法识别的USB设备
+	//USBH_Msg_Show(3);//无法识别的USB设备
 	//printf("无法识别的USB设备!\r\n\r\n");    
 }  
 //等待用户输入按键,执行下一步操作
@@ -229,13 +234,13 @@ u8 USBH_Check_HIDCommDead(USB_OTG_CORE_HANDLE *pcore,HID_Machine_TypeDef *phidm)
 //鼠标初始化
 void USR_MOUSE_Init	(void)
 {
- 	USBH_Msg_Show(2);		//USB 鼠标
+ 	//USBH_Msg_Show(2);		//USB 鼠标
 	USB_FIRST_PLUGIN_FLAG=1;//标记第一次插入
 }
 //键盘初始化
 void  USR_KEYBRD_Init(void)
 { 
- 	USBH_Msg_Show(1);		//USB 键盘
+ 	//USBH_Msg_Show(1);		//USB 键盘
 	USB_FIRST_PLUGIN_FLAG=1;//标记第一次插入
 }
 
@@ -247,6 +252,8 @@ __align(4) u8 tbuf[2017];
 void USR_MOUSE_ProcessData(HID_MOUSE_Data_TypeDef *data)
 {  
 	static signed short x,y,z; 
+	int32_t delta_x;
+	int32_t delta_y;
 	if(USB_FIRST_PLUGIN_FLAG)//第一次插入,将数据清零
 	{
 		USB_FIRST_PLUGIN_FLAG=0;
@@ -261,6 +268,15 @@ void USR_MOUSE_ProcessData(HID_MOUSE_Data_TypeDef *data)
 	z+=(signed char)data->z;
 	if(z>9999)z=9999;
 	if(z<-9999)z=-9999;
+	delta_x=SystemSettings_ScaleMouseDelta((signed char)data->x);
+	delta_y=SystemSettings_ScaleMouseDelta((signed char)data->y);
+	g_mouse_x+=delta_x;
+	g_mouse_y+=delta_y;
+	if(g_mouse_x<0)g_mouse_x=0;
+	else if(g_mouse_x>=lcddev.width)g_mouse_x=lcddev.width-1;
+	if(g_mouse_y<0)g_mouse_y=0;
+	else if(g_mouse_y>=lcddev.height)g_mouse_y=lcddev.height-1;
+	g_mouse_pressed=(data->button&0X01)?1U:0U;
 	POINT_COLOR=BLUE;
 	sprintf((char*)tbuf,"BUTTON:");
 	if(data->button&0X01)strcat((char*)tbuf,"LEFT ");
@@ -268,14 +284,14 @@ void USR_MOUSE_ProcessData(HID_MOUSE_Data_TypeDef *data)
 	else if((data->button&0X03)==0X03)strcat((char*)tbuf,"+RIGHT");
 	if((data->button&0X07)==0X04)strcat((char*)tbuf,"MID  ");
 	else if((data->button&0X07)>0X04)strcat((char*)tbuf,"+MID");  
- 	LCD_Fill(30+56,180,lcddev.width-1,180+16,WHITE);	
-	LCD_ShowString(30,180,210,16,16,tbuf);	
+ 	//LCD_Fill(30+56,180,lcddev.width-1,180+16,WHITE);	
+	//LCD_ShowString(30,180,210,16,16,tbuf);	
 	sprintf((char*)tbuf,"X POS:%05d",x); 
-	LCD_ShowString(30,200,200,16,16,tbuf);	
+	//LCD_ShowString(30,200,200,16,16,tbuf);	
 	sprintf((char*)tbuf,"Y POS:%05d",y);
-	LCD_ShowString(30,220,200,16,16,tbuf);	
+	//LCD_ShowString(30,220,200,16,16,tbuf);	
 	sprintf((char*)tbuf,"Z POS:%05d",z);
-	LCD_ShowString(30,240,200,16,16,tbuf);	 
+	//LCD_ShowString(30,240,200,16,16,tbuf);	 
 	//printf("btn,X,Y,Z:0x%x,%d,%d,%d\r\n",data->button,(signed char)data->x,(signed char)data->y,(signed char)data->z);   
 } 
 
@@ -283,41 +299,9 @@ void USR_MOUSE_ProcessData(HID_MOUSE_Data_TypeDef *data)
 //USB键盘数据处理
 //data:USB鼠标数据结构体指针
 void  USR_KEYBRD_ProcessData (uint8_t data)
-{ 
-	static u16 pos; 
-	static u16 endx,endy;
-	static u16 maxinputchar;
-	
-	u8 buf[4];
-	if(USB_FIRST_PLUGIN_FLAG)//第一次插入,将数据清零
-	{
-		USB_FIRST_PLUGIN_FLAG=0;
-		endx=((lcddev.width-30)/8)*8+30;		//得到endx值
-		endy=((lcddev.height-220)/16)*16+220;	//得到endy值
-		maxinputchar=((lcddev.width-30)/8);
-		maxinputchar*=(lcddev.height-220)/16;	//当前LCD最大可以显示的字符数.
- 		pos=0; 
-	}
-	POINT_COLOR=BLUE;
-	sprintf((char*)buf,"%02X",data);
-	LCD_ShowString(30+56,180,200,16,16,buf);//显示键值	 
-	if(data>=' '&&data<='~')
-	{
-		tbuf[pos++]=data;
-		tbuf[pos]=0;		//添加结束符. 
-		if(pos>maxinputchar)pos=maxinputchar;//最大输入这么多
-	}else if(data==0X0D)	//退格键
-	{
-		if(pos)pos--;
-		tbuf[pos]=0;		//添加结束符.  
-	}
-	if(pos<=maxinputchar)	//没有超过显示区
-	{
-		LCD_Fill(30,220,endx,endy,WHITE);
-		LCD_ShowString(30,220,endx-30,endy-220,16,tbuf);
-	}		
-	//printf("KEY Board Value:%02X\r\n",data);
-	//printf("KEY Board Char:%c\r\n",data); 
+{
+	USB_FIRST_PLUGIN_FLAG=0;
+	KeyboardInput_ProcessKey(data);
 }
 
 

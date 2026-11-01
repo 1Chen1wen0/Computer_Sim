@@ -45,3 +45,12 @@ computer_sim\key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 computer_sim\key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 computer_sim\key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h
 computer_sim\key.o: ../../Computer_Sim/delay.h
+computer_sim\key.o: ../FreeRTOS/include/FreeRTOS.h
+computer_sim\key.o: ../Core/Inc/FreeRTOSConfig.h
+computer_sim\key.o: ../FreeRTOS/include/projdefs.h
+computer_sim\key.o: ../FreeRTOS/include/portable.h
+computer_sim\key.o: ../FreeRTOS/include/deprecated_definitions.h
+computer_sim\key.o: ../FreeRTOS/portable/RVDS/ARM_CM4F/portmacro.h
+computer_sim\key.o: ../FreeRTOS/include/mpu_wrappers.h
+computer_sim\key.o: ../FreeRTOS/include/task.h
+computer_sim\key.o: ../FreeRTOS/include/list.h

@@ -11,3 +11,4 @@ computer_sim\lv_sprintf_builtin.o: D:\keil5\ARM\ARMCC\Bin\..\include\inttypes.h
 computer_sim\lv_sprintf_builtin.o: D:\keil5\ARM\ARMCC\Bin\..\include\limits.h
 computer_sim\lv_sprintf_builtin.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdarg.h
 computer_sim\lv_sprintf_builtin.o: ..\lvgl\src\stdlib\builtin\../lv_string.h
+computer_sim\lv_sprintf_builtin.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h

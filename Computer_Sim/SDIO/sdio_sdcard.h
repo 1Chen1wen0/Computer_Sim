@@ -14,7 +14,8 @@
 //All rights reserved									  
 //////////////////////////////////////////////////////////////////////////////////
 
-#define SD_TIMEOUT 			((uint32_t)100000000)  	//³¬Ê±Ê±¼ä
+#define SD_DATA_TIMEOUT_MS  ((uint32_t)5000U)
+#define SD_READY_TIMEOUT_MS ((uint32_t)5000U)
 #define SD_TRANSFER_OK     	((uint8_t)0x00)
 #define SD_TRANSFER_BUSY   	((uint8_t)0x01)
 

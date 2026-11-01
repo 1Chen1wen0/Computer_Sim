@@ -58,6 +58,7 @@ computer_sim\lv_obj.o: ..\lvgl\src\core\../draw/../misc/lv_fs.h
 computer_sim\lv_obj.o: ..\lvgl\src\core\../draw/lv_draw_label.h
 computer_sim\lv_obj.o: ..\lvgl\src\core\../draw/lv_draw_image.h
 computer_sim\lv_obj.o: ..\lvgl\src\core\../draw/lv_draw_line.h
+computer_sim\lv_obj.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_obj.o: ..\lvgl\src\core\../draw/lv_draw_arc.h
 computer_sim\lv_obj.o: ..\lvgl\src\core\../draw/lv_draw_triangle.h
 computer_sim\lv_obj.o: ..\lvgl\src\core\../draw/lv_draw_blur.h
@@ -76,6 +77,9 @@ computer_sim\lv_obj.o: ..\lvgl\src\core\../indev/lv_indev_scroll.h
 computer_sim\lv_obj.o: ..\lvgl\src\core\../indev/lv_indev_gesture.h
 computer_sim\lv_obj.o: ..\lvgl\src\core\lv_refr.h
 computer_sim\lv_obj.o: ..\lvgl\src\core\../display/lv_display_private.h
+computer_sim\lv_obj.o: ..\lvgl\src\core\../display/../debugging/sysmon/lv_sysmon_private.h
+computer_sim\lv_obj.o: ..\lvgl\src\core\../display/../debugging/sysmon/lv_sysmon.h
+computer_sim\lv_obj.o: ..\lvgl\src\core\../display/../debugging/sysmon/../../core/lv_observer.h
 computer_sim\lv_obj.o: ..\lvgl\src\core\../themes/lv_theme.h
 computer_sim\lv_obj.o: ..\lvgl\src\core\../themes/default/lv_theme_default.h
 computer_sim\lv_obj.o: ..\lvgl\src\core\../themes/default/../lv_theme.h

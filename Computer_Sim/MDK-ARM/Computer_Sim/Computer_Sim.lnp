@@ -480,6 +480,18 @@
 "computer_sim\led.o"
 "computer_sim\key.o"
 "computer_sim\rtc.o"
+"..\XMRAM\XMRAM.lib"
+"computer_sim\keyboardinput.o"
+"computer_sim\password.o"
+"computer_sim\screenpower.o"
+"computer_sim\desktop.o"
+"computer_sim\desktopui.o"
+"computer_sim\systemsettings.o"
+"computer_sim\tpad.o"
+"computer_sim\wavplay.o"
+"computer_sim\audioplay.o"
+"computer_sim\fontupd.o"
+"computer_sim\text.o"
 --strict --scatter "Computer_Sim\Computer_Sim.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

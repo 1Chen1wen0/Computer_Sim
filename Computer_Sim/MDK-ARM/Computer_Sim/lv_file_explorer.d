@@ -59,6 +59,7 @@ computer_sim\lv_file_explorer.o: ..\lvgl\src\others\file_explorer\../../core/../
 computer_sim\lv_file_explorer.o: ..\lvgl\src\others\file_explorer\../../core/../draw/lv_draw_label.h
 computer_sim\lv_file_explorer.o: ..\lvgl\src\others\file_explorer\../../core/../draw/lv_draw_image.h
 computer_sim\lv_file_explorer.o: ..\lvgl\src\others\file_explorer\../../core/../draw/lv_draw_line.h
+computer_sim\lv_file_explorer.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_file_explorer.o: ..\lvgl\src\others\file_explorer\../../core/../draw/lv_draw_arc.h
 computer_sim\lv_file_explorer.o: ..\lvgl\src\others\file_explorer\../../core/../draw/lv_draw_triangle.h
 computer_sim\lv_file_explorer.o: ..\lvgl\src\others\file_explorer\../../core/../draw/lv_draw_blur.h

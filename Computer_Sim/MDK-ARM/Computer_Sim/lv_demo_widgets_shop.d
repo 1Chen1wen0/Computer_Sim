@@ -72,6 +72,7 @@ computer_sim\lv_demo_widgets_shop.o: ..\lvgl\demos\widgets\../../src/core/../dra
 computer_sim\lv_demo_widgets_shop.o: ..\lvgl\demos\widgets\../../src/core/../draw/lv_draw_label.h
 computer_sim\lv_demo_widgets_shop.o: ..\lvgl\demos\widgets\../../src/core/../draw/lv_draw_image.h
 computer_sim\lv_demo_widgets_shop.o: ..\lvgl\demos\widgets\../../src/core/../draw/lv_draw_line.h
+computer_sim\lv_demo_widgets_shop.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_demo_widgets_shop.o: ..\lvgl\demos\widgets\../../src/core/../draw/lv_draw_arc.h
 computer_sim\lv_demo_widgets_shop.o: ..\lvgl\demos\widgets\../../src/core/../draw/lv_draw_triangle.h
 computer_sim\lv_demo_widgets_shop.o: ..\lvgl\demos\widgets\../../src/core/../draw/lv_draw_blur.h
@@ -209,3 +210,5 @@ computer_sim\lv_demo_widgets_shop.o: ..\lvgl\demos\widgets\../../src/lv_api_map_
 computer_sim\lv_demo_widgets_shop.o: ..\lvgl\demos\widgets\../../src/lv_api_map_v9_2.h
 computer_sim\lv_demo_widgets_shop.o: ..\lvgl\demos\widgets\../../src/lv_api_map_v9_3.h
 computer_sim\lv_demo_widgets_shop.o: ..\lvgl\demos\widgets\../../src/lv_api_map_v9_4.h
+computer_sim\lv_demo_widgets_shop.o: ..\lvgl\demos\widgets\../widgets/lv_demo_widgets.h
+computer_sim\lv_demo_widgets_shop.o: ..\lvgl\demos\widgets\lv_demo_widgets_components.h

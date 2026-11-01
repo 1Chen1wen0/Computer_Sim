@@ -81,6 +81,7 @@ computer_sim\lv_bin_decoder.o: ..\lvgl\src\libs\bin_decoder\../../core/../draw/s
 computer_sim\lv_bin_decoder.o: ..\lvgl\src\libs\bin_decoder\../../core/../draw/sw/../lv_draw_rect.h
 computer_sim\lv_bin_decoder.o: ..\lvgl\src\libs\bin_decoder\../../core/../draw/sw/../lv_draw_label.h
 computer_sim\lv_bin_decoder.o: ..\lvgl\src\libs\bin_decoder\../../core/../draw/sw/../lv_draw_line.h
+computer_sim\lv_bin_decoder.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_bin_decoder.o: ..\lvgl\src\libs\bin_decoder\../../core/../draw/sw/../lv_draw_mask.h
 computer_sim\lv_bin_decoder.o: ..\lvgl\src\libs\bin_decoder\../../core/../draw/sw/../lv_draw_arc.h
 computer_sim\lv_bin_decoder.o: ..\lvgl\src\libs\bin_decoder\../../core/../draw/sw/../lv_draw_blur.h

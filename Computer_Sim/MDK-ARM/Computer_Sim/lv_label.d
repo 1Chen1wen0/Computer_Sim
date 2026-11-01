@@ -60,6 +60,7 @@ computer_sim\lv_label.o: ..\lvgl\src\widgets\label\../../core/../core/lv_obj_sty
 computer_sim\lv_label.o: ..\lvgl\src\widgets\label\../../core/lv_obj_draw.h
 computer_sim\lv_label.o: ..\lvgl\src\widgets\label\../../core/../draw/lv_draw_image.h
 computer_sim\lv_label.o: ..\lvgl\src\widgets\label\../../core/../draw/lv_draw_line.h
+computer_sim\lv_label.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\lv_label.o: ..\lvgl\src\widgets\label\../../core/../draw/lv_draw_arc.h
 computer_sim\lv_label.o: ..\lvgl\src\widgets\label\../../core/../draw/lv_draw_triangle.h
 computer_sim\lv_label.o: ..\lvgl\src\widgets\label\../../core/../draw/lv_draw_blur.h

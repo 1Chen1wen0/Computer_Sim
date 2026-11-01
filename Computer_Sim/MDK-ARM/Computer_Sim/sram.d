@@ -44,5 +44,7 @@ computer_sim\sram.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 computer_sim\sram.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 computer_sim\sram.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 computer_sim\sram.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h
+computer_sim\sram.o: ../../Computer_Sim/delay.h
+computer_sim\sram.o: ..\XMRAM\XMRAM.h
 computer_sim\sram.o: ..\usart\usart.h
 computer_sim\sram.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdio.h

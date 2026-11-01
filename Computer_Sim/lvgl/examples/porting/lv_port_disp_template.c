@@ -29,8 +29,8 @@
 
 #define BYTE_PER_PIXEL (LV_COLOR_FORMAT_GET_SIZE(LV_COLOR_FORMAT_RGB565)) /*will be 2 for RGB565 */
 
-/* Bank1 sector 3 external SRAM, initialized by FSMC_SRAM_Init(). */
-#define EXT_SRAM_BASE_ADDR  0x68000000UL
+/* End-exclusive address of the 1 MB external SRAM. */
+#define EXT_SRAM_END_ADDR   0x68100000UL
 #define DRAW_BUF_SIZE       (MY_DISP_HOR_RES * 40U * BYTE_PER_PIXEL)
 
 /**********************
@@ -99,8 +99,8 @@ void lv_port_disp_init(void)
     /* Example 2
      * Two buffers for partial rendering
      * In flush_cb DMA or similar hardware should be used to update the display in the background.*/
-    void * buf_2_1 = (void *)EXT_SRAM_BASE_ADDR;
-    void * buf_2_2 = (void *)(EXT_SRAM_BASE_ADDR + DRAW_BUF_SIZE);
+    void * buf_2_1 = (void *)(EXT_SRAM_END_ADDR - 2U * DRAW_BUF_SIZE);
+    void * buf_2_2 = (void *)(EXT_SRAM_END_ADDR - DRAW_BUF_SIZE);
     lv_display_set_buffers(disp, buf_2_1, buf_2_2, DRAW_BUF_SIZE, LV_DISPLAY_RENDER_MODE_PARTIAL);
 
     /* Example 3

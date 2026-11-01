@@ -137,6 +137,7 @@ computer_sim\main.o: ../lvgl/src/core/../draw/../misc/lv_fs.h
 computer_sim\main.o: ../lvgl/src/core/../draw/lv_draw_label.h
 computer_sim\main.o: ../lvgl/src/core/../draw/lv_draw_image.h
 computer_sim\main.o: ../lvgl/src/core/../draw/lv_draw_line.h
+computer_sim\main.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h
 computer_sim\main.o: ../lvgl/src/core/../draw/lv_draw_arc.h
 computer_sim\main.o: ../lvgl/src/core/../draw/lv_draw_triangle.h
 computer_sim\main.o: ../lvgl/src/core/../draw/lv_draw_blur.h
@@ -275,3 +276,17 @@ computer_sim\main.o: ../lvgl/src/lv_api_map_v9_2.h
 computer_sim\main.o: ../lvgl/src/lv_api_map_v9_3.h
 computer_sim\main.o: ../lvgl/src/lv_api_map_v9_4.h
 computer_sim\main.o: ../../Computer_Sim/SYS/DEBUG/debug.h
+computer_sim\main.o: ../SDIO/sdio_sdcard.h
+computer_sim\main.o: ..\LED\led.h
+computer_sim\main.o: ..\KEY\key.h
+computer_sim\main.o: ../W25QXX/w25qxx.h
+computer_sim\main.o: ../FATFS/src/ff.h
+computer_sim\main.o: ../FATFS/src/integer.h
+computer_sim\main.o: ../FATFS/src/ffconf.h
+computer_sim\main.o: ../FATFS/exfuns/exfuns.h
+computer_sim\main.o: ..\RTC\rtc.h
+computer_sim\main.o: ../MALLOC/malloc.h
+computer_sim\main.o: ..\TPAD\tpad.h
+computer_sim\main.o: ..\UI\ScreenPower.h
+computer_sim\main.o: ..\UI\SystemSettings.h
+computer_sim\main.o: ..\WM8978\wm8978.h
