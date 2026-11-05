@@ -19,7 +19,7 @@
 #define SD_TRANSFER_OK     	((uint8_t)0x00)
 #define SD_TRANSFER_BUSY   	((uint8_t)0x01)
 
-#define SD_DMA_MODE    		0						//1：DMA模式，0：查询模式   
+#define SD_DMA_MODE    		1						//1：DMA模式，0：查询模式
 
 extern SD_HandleTypeDef        SDCARD_Handler;     	//SD卡句柄
 extern HAL_SD_CardInfoTypeDef  SDCardInfo;         	//SD卡信息结构体

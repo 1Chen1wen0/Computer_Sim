@@ -456,8 +456,8 @@ u8 TP_Init(void)
 
 		// 使用默认校准参数
 		tp_dev.touchtype=0;
-		tp_dev.xfac=0.07;
-		tp_dev.yfac=0.09;
+		tp_dev.xfac=0.09;
+		tp_dev.yfac=0.125;
 		tp_dev.xoff=-20;
 		tp_dev.yoff=-20;
 	return 1; 									 

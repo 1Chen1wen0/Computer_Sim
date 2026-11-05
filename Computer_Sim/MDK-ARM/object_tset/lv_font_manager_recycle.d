@@ -1,0 +1,12 @@
+.\object_tset\lv_font_manager_recycle.o: ..\lvgl\src\font\font_manager\lv_font_manager_recycle.c
+.\object_tset\lv_font_manager_recycle.o: ..\lvgl\src\font\font_manager\lv_font_manager_recycle.h
+.\object_tset\lv_font_manager_recycle.o: ..\lvgl\src\font\font_manager\../../misc/lv_types.h
+.\object_tset\lv_font_manager_recycle.o: ..\lvgl\src\font\font_manager\../../misc/../lv_conf_internal.h
+.\object_tset\lv_font_manager_recycle.o: ..\lvgl\src\font\font_manager\../../misc/../lv_conf_kconfig.h
+.\object_tset\lv_font_manager_recycle.o: ../lvgl/lv_conf.h
+.\object_tset\lv_font_manager_recycle.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\object_tset\lv_font_manager_recycle.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\object_tset\lv_font_manager_recycle.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\object_tset\lv_font_manager_recycle.o: D:\keil5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\object_tset\lv_font_manager_recycle.o: D:\keil5\ARM\ARMCC\Bin\..\include\limits.h
+.\object_tset\lv_font_manager_recycle.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdarg.h

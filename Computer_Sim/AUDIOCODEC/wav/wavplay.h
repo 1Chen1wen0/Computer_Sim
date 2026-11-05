@@ -90,6 +90,19 @@ typedef __packed struct
 }__wavctrl; 
 
 
+typedef struct {
+    u32 result;
+    u32 requested;
+    u32 actual;
+} WavReadInfo;
+
+extern __wavctrl wavctrl;
+extern vu8 wavtransferend;
+extern vu8 wavwitchbuf;
+extern vu32 wav_dma_completions;
+extern WavReadInfo wav_read_info;
+
+/* Returns a FatFs result, including FR_INVALID_OBJECT for unsupported WAV. */
 u8 wav_decode_init(u8* fname,__wavctrl* wavx);
 u32 wav_buffill(u8 *buf,u16 size,u8 bits);
 void wav_i2s_dma_tx_callback(void); 

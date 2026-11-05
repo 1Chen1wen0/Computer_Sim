@@ -1,0 +1,12 @@
+.\object_tset\list.o: ..\FreeRTOS\list.c
+.\object_tset\list.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\object_tset\list.o: ../FreeRTOS/include/FreeRTOS.h
+.\object_tset\list.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\object_tset\list.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\object_tset\list.o: ../Core/Inc/FreeRTOSConfig.h
+.\object_tset\list.o: ../FreeRTOS/include/projdefs.h
+.\object_tset\list.o: ../FreeRTOS/include/portable.h
+.\object_tset\list.o: ../FreeRTOS/include/deprecated_definitions.h
+.\object_tset\list.o: ../FreeRTOS/portable/RVDS/ARM_CM4F/portmacro.h
+.\object_tset\list.o: ../FreeRTOS/include/mpu_wrappers.h
+.\object_tset\list.o: ../FreeRTOS/include/list.h

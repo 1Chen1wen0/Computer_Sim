@@ -1,0 +1,12 @@
+.\object_tset\lv_draw_nanovg.o: ..\lvgl\src\draw\nanovg\lv_draw_nanovg.c
+.\object_tset\lv_draw_nanovg.o: ..\lvgl\src\draw\nanovg\lv_draw_nanovg.h
+.\object_tset\lv_draw_nanovg.o: ..\lvgl\src\draw\nanovg\../../misc/lv_types.h
+.\object_tset\lv_draw_nanovg.o: ..\lvgl\src\draw\nanovg\../../misc/../lv_conf_internal.h
+.\object_tset\lv_draw_nanovg.o: ..\lvgl\src\draw\nanovg\../../misc/../lv_conf_kconfig.h
+.\object_tset\lv_draw_nanovg.o: ../lvgl/lv_conf.h
+.\object_tset\lv_draw_nanovg.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\object_tset\lv_draw_nanovg.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\object_tset\lv_draw_nanovg.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\object_tset\lv_draw_nanovg.o: D:\keil5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\object_tset\lv_draw_nanovg.o: D:\keil5\ARM\ARMCC\Bin\..\include\limits.h
+.\object_tset\lv_draw_nanovg.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdarg.h

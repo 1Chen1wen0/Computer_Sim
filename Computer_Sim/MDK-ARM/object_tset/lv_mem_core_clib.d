@@ -1,0 +1,13 @@
+.\object_tset\lv_mem_core_clib.o: ..\lvgl\src\stdlib\clib\lv_mem_core_clib.c
+.\object_tset\lv_mem_core_clib.o: ..\lvgl\src\stdlib\clib\../lv_mem.h
+.\object_tset\lv_mem_core_clib.o: ..\lvgl\src\stdlib\clib\../../lv_conf_internal.h
+.\object_tset\lv_mem_core_clib.o: ..\lvgl\src\stdlib\clib\../../lv_conf_kconfig.h
+.\object_tset\lv_mem_core_clib.o: ../lvgl/lv_conf.h
+.\object_tset\lv_mem_core_clib.o: ..\lvgl\src\stdlib\clib\../lv_string.h
+.\object_tset\lv_mem_core_clib.o: ..\lvgl\src\stdlib\clib\../../misc/lv_types.h
+.\object_tset\lv_mem_core_clib.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\object_tset\lv_mem_core_clib.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\object_tset\lv_mem_core_clib.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\object_tset\lv_mem_core_clib.o: D:\keil5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\object_tset\lv_mem_core_clib.o: D:\keil5\ARM\ARMCC\Bin\..\include\limits.h
+.\object_tset\lv_mem_core_clib.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdarg.h

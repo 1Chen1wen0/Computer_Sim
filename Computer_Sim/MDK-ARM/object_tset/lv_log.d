@@ -1,0 +1,12 @@
+.\object_tset\lv_log.o: ..\lvgl\src\misc\lv_log.c
+.\object_tset\lv_log.o: ..\lvgl\src\misc\lv_log.h
+.\object_tset\lv_log.o: ..\lvgl\src\misc\../lv_conf_internal.h
+.\object_tset\lv_log.o: ..\lvgl\src\misc\../lv_conf_kconfig.h
+.\object_tset\lv_log.o: ../lvgl/lv_conf.h
+.\object_tset\lv_log.o: ..\lvgl\src\misc\lv_types.h
+.\object_tset\lv_log.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\object_tset\lv_log.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\object_tset\lv_log.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\object_tset\lv_log.o: D:\keil5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\object_tset\lv_log.o: D:\keil5\ARM\ARMCC\Bin\..\include\limits.h
+.\object_tset\lv_log.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdarg.h

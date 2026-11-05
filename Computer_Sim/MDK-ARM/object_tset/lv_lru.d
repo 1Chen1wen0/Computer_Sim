@@ -1,0 +1,17 @@
+.\object_tset\lv_lru.o: ..\lvgl\src\misc\lv_lru.c
+.\object_tset\lv_lru.o: ..\lvgl\src\misc\lv_lru.h
+.\object_tset\lv_lru.o: ..\lvgl\src\misc\../lv_conf_internal.h
+.\object_tset\lv_lru.o: ..\lvgl\src\misc\../lv_conf_kconfig.h
+.\object_tset\lv_lru.o: ../lvgl/lv_conf.h
+.\object_tset\lv_lru.o: ..\lvgl\src\misc\lv_types.h
+.\object_tset\lv_lru.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\object_tset\lv_lru.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\object_tset\lv_lru.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\object_tset\lv_lru.o: D:\keil5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\object_tset\lv_lru.o: D:\keil5\ARM\ARMCC\Bin\..\include\limits.h
+.\object_tset\lv_lru.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\object_tset\lv_lru.o: ..\lvgl\src\misc\lv_math.h
+.\object_tset\lv_lru.o: ..\lvgl\src\misc\../stdlib/lv_mem.h
+.\object_tset\lv_lru.o: ..\lvgl\src\misc\../stdlib/lv_string.h
+.\object_tset\lv_lru.o: ..\lvgl\src\misc\lv_assert.h
+.\object_tset\lv_lru.o: ..\lvgl\src\misc\lv_log.h

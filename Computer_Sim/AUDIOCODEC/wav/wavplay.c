@@ -8,6 +8,7 @@
 #include "wm8978.h"
 #include "key.h"
 #include "led.h"
+#include <string.h>
 //////////////////////////////////////////////////////////////////////////////////	 
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
 //ALIENTEK STM32F407开发板
@@ -27,6 +28,8 @@
  
 __wavctrl wavctrl;		//WAV控制结构体
 vu8 wavtransferend=0;	//i2s传输完成标志
+vu32 wav_dma_completions=0;
+WavReadInfo wav_read_info;
 vu8 wavwitchbuf=0;		//i2sbufx指示标志
  
 //WAV解析初始化
@@ -35,62 +38,71 @@ vu8 wavwitchbuf=0;		//i2sbufx指示标志
 //返回值:0,成功;1,打开文件失败;2,非WAV文件;3,DATA区域未找到.
 u8 wav_decode_init(u8* fname,__wavctrl* wavx)
 {
-	FIL*ftemp;
-	u8 *buf; 
-	u32 br=0;
-	u8 res=0;
-	
-	ChunkRIFF *riff;
-	ChunkFMT *fmt;
-	ChunkFACT *fact;
-	ChunkDATA *data;
-	ftemp=(FIL*)mymalloc(SRAMIN,sizeof(FIL));
-	buf=mymalloc(SRAMIN,512);
-	if(ftemp&&buf)	//内存申请成功
-	{
-		res=f_open(ftemp,(TCHAR*)fname,FA_READ);//打开文件
-		if(res==FR_OK)
-		{
-			f_read(ftemp,buf,512,&br);	//读取512字节在数据
-			riff=(ChunkRIFF *)buf;		//获取RIFF块
-			if(riff->Format==0X45564157)//是WAV文件
-			{
-				fmt=(ChunkFMT *)(buf+12);	//获取FMT块 
-				fact=(ChunkFACT *)(buf+12+8+fmt->ChunkSize);//读取FACT块
-				if(fact->ChunkID==0X74636166||fact->ChunkID==0X5453494C)wavx->datastart=12+8+fmt->ChunkSize+8+fact->ChunkSize;//具有fact/LIST块的时候(未测试)
-				else wavx->datastart=12+8+fmt->ChunkSize;  
-				data=(ChunkDATA *)(buf+wavx->datastart);	//读取DATA块
-				if(data->ChunkID==0X61746164)//解析成功!
-				{
-					wavx->audioformat=fmt->AudioFormat;		//音频格式
-					wavx->nchannels=fmt->NumOfChannels;		//通道数
-					wavx->samplerate=fmt->SampleRate;		//采样率
-					wavx->bitrate=fmt->ByteRate*8;			//得到位速
-					wavx->blockalign=fmt->BlockAlign;		//块对齐
-					wavx->bps=fmt->BitsPerSample;			//位数,16/24/32位
-					
-					wavx->datasize=data->ChunkSize;			//数据块大小
-					wavx->datastart=wavx->datastart+8;		//数据流开始的地方. 
-					 
-					printf("wavx->audioformat:%d\r\n",wavx->audioformat);
-					printf("wavx->nchannels:%d\r\n",wavx->nchannels);
-					printf("wavx->samplerate:%d\r\n",wavx->samplerate);
-					printf("wavx->bitrate:%d\r\n",wavx->bitrate);
-					printf("wavx->blockalign:%d\r\n",wavx->blockalign);
-					printf("wavx->bps:%d\r\n",wavx->bps);
-					printf("wavx->datasize:%d\r\n",wavx->datasize);
-					printf("wavx->datastart:%d\r\n",wavx->datastart);  
-				}else res=3;//data区域未找到.
-			}else res=2;//非wav文件
-			
-		}else res=1;//打开文件错误
-	}
-	f_close(ftemp);
-	myfree(SRAMIN,ftemp);//释放内存
-	myfree(SRAMIN,buf); 
-	return 0;
-}
+    FIL *ftemp = NULL;
+    u8 *buf = NULL;
+    UINT br = 0;
+    FRESULT res = FR_NOT_ENOUGH_CORE;
+    u32 offset, limit;
+    u8 file_open = 0;
+    ChunkRIFF *riff;
+    ChunkFMT *fmt;
+    ChunkDATA *data;
 
+    memset(wavx, 0, sizeof(*wavx));
+    ftemp = (FIL *)mymalloc(SRAMIN, sizeof(FIL));
+    buf = (u8 *)mymalloc(SRAMIN, 512);
+    if(ftemp == NULL || buf == NULL) goto cleanup;
+    res = f_open(ftemp, (const TCHAR *)fname, FA_READ);
+    if(res != FR_OK) goto cleanup;
+    file_open = 1;
+    res = f_read(ftemp, buf, 512, &br);
+    if(res != FR_OK) goto cleanup;
+    res = FR_INVALID_OBJECT;
+    if(br < 36U || f_size(ftemp) > 0xFFFFFFFFUL) goto cleanup;
+
+    /* Keep the example's packed WAV header structures and 512-byte header
+     * read. Bound every optional LIST/fact chunk before dereferencing it. */
+    riff = (ChunkRIFF *)buf;
+    fmt = (ChunkFMT *)(buf + 12);
+    if(riff->ChunkID != 0x46464952UL || riff->Format != 0x45564157UL ||
+       riff->ChunkSize < 4U || riff->ChunkSize > (u32)f_size(ftemp) - 8U ||
+       fmt->ChunkID != 0x20746D66UL || fmt->ChunkSize < 16U ||
+       fmt->ChunkSize > br - 20U) goto cleanup;
+    if(fmt->AudioFormat != 1U ||
+       (fmt->NumOfChannels != 1U && fmt->NumOfChannels != 2U) ||
+       (fmt->BitsPerSample != 16U && fmt->BitsPerSample != 24U) ||
+       fmt->SampleRate == 0U || fmt->SampleRate > 192000U ||
+       fmt->BlockAlign != fmt->NumOfChannels * (fmt->BitsPerSample / 8U) ||
+       fmt->ByteRate != fmt->SampleRate * fmt->BlockAlign) goto cleanup;
+    limit = riff->ChunkSize + 8U;
+    offset = 20U + fmt->ChunkSize + (fmt->ChunkSize & 1U);
+    for(;;) {
+        if(offset > br || br - offset < sizeof(ChunkDATA) ||
+           offset > limit || limit - offset < sizeof(ChunkDATA)) goto cleanup;
+        data = (ChunkDATA *)(buf + offset);
+        offset += sizeof(ChunkDATA);
+        if(data->ChunkSize > limit - offset) goto cleanup;
+        if(data->ChunkID == 0x61746164UL) break;
+        if((data->ChunkSize & 1U) > limit - offset - data->ChunkSize) goto cleanup;
+        offset += data->ChunkSize + (data->ChunkSize & 1U);
+    }
+    if(data->ChunkSize == 0U || data->ChunkSize % fmt->BlockAlign != 0U) goto cleanup;
+    wavx->audioformat = fmt->AudioFormat;
+    wavx->nchannels = fmt->NumOfChannels;
+    wavx->samplerate = fmt->SampleRate;
+    wavx->bitrate = fmt->ByteRate * 8U;
+    wavx->blockalign = fmt->BlockAlign;
+    wavx->bps = fmt->BitsPerSample;
+    wavx->datasize = data->ChunkSize;
+    wavx->datastart = offset;
+    wavx->totsec = data->ChunkSize / fmt->ByteRate;
+    res = FR_OK;
+cleanup:
+    if(file_open) (void)f_close(ftemp);
+    myfree(SRAMIN, ftemp);
+    myfree(SRAMIN, buf);
+    return (u8)res;
+}
 //填充buf
 //buf:数据区
 //size:填充数据量
@@ -98,34 +110,58 @@ u8 wav_decode_init(u8* fname,__wavctrl* wavx)
 //返回值:读到的数据个数
 u32 wav_buffill(u8 *buf,u16 size,u8 bits)
 {
-	u16 readlen=0;
-	u32 bread;
-	u16 i;
-	u8 *p;
-	if(bits==24)//24bit音频,需要处理一下
-	{
-		readlen=(size/4)*3;							//此次要读取的字节数
-		f_read(audiodev.file,audiodev.tbuf,readlen,(UINT*)&bread);	//读取数据
-		p=audiodev.tbuf;
-		for(i=0;i<size;)
-		{
-			buf[i++]=p[1];
-			buf[i]=p[2]; 
-			i+=2;
-			buf[i++]=p[0];
-			p+=3;
-		} 
-		bread=(bread*4)/3;		//填充后的大小.
-	}else 
-	{
-		f_read(audiodev.file,buf,size,(UINT*)&bread);//16bit音频,直接读取数据  
-		if(bread<size)//不够数据了,补充0
-		{
-			for(i=bread;i<size-bread;i++)buf[i]=0; 
-		}
-	}
-	return bread;
-}  
+    UINT bread = 0;
+    u32 readlen, remaining, position, produced = 0, i, copies;
+    FRESULT res;
+
+    memset(&wav_read_info, 0, sizeof(wav_read_info));
+    if(buf == NULL || audiodev.file == NULL || audiodev.tbuf == NULL ||
+       (bits != 16U && bits != 24U)) {
+        wav_read_info.result = FR_INVALID_OBJECT;
+        return 0;
+    }
+    position = (u32)f_tell(audiodev.file);
+    if(position < wavctrl.datastart || position - wavctrl.datastart > wavctrl.datasize) {
+        wav_read_info.result = FR_INVALID_OBJECT;
+        return 0;
+    }
+    remaining = wavctrl.datasize - (position - wavctrl.datastart);
+    if(bits == 16U) readlen = wavctrl.nchannels == 1U ? size / 2U : size;
+    else readlen = wavctrl.nchannels == 1U ? (size / 8U) * 3U : (size / 4U) * 3U;
+    if(readlen > remaining) readlen = remaining;
+    wav_read_info.requested = readlen;
+
+    /* The example reads stereo 16-bit PCM straight into the DMA buffer. */
+    if(bits == 16U && wavctrl.nchannels == 2U) {
+        res = f_read(audiodev.file, buf, readlen, &bread);
+        produced = bread;
+    }
+    else {
+        res = f_read(audiodev.file, audiodev.tbuf, readlen, &bread);
+        copies = wavctrl.nchannels == 1U ? 2U : 1U;
+        if(res == FR_OK) {
+            for(i = 0; i + bits / 8U <= bread; i += bits / 8U) {
+                u32 channel;
+                for(channel = 0; channel < copies; channel++) {
+                    if(bits == 16U) {
+                        buf[produced++] = audiodev.tbuf[i];
+                        buf[produced++] = audiodev.tbuf[i + 1U];
+                    }
+                    else {
+                        buf[produced++] = audiodev.tbuf[i + 1U];
+                        buf[produced++] = audiodev.tbuf[i + 2U];
+                        buf[produced++] = 0;
+                        buf[produced++] = audiodev.tbuf[i];
+                    }
+                }
+            }
+        }
+    }
+    wav_read_info.result = (u32)res;
+    wav_read_info.actual = bread;
+    if(produced < size) memset(buf + produced, 0, size - produced);
+    return res == FR_OK ? produced : 0U;
+}
 //WAV播放时,I2S DMA传输回调函数
 void wav_i2s_dma_tx_callback(void) 
 {   
@@ -151,6 +187,7 @@ void wav_i2s_dma_tx_callback(void)
 			}
 		}
 	}
+	wav_dma_completions++;
 	wavtransferend=1;
 } 
 //得到当前播放时间

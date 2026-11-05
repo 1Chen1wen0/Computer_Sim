@@ -1,0 +1,16 @@
+.\object_tset\lv_tree.o: ..\lvgl\src\misc\lv_tree.c
+.\object_tset\lv_tree.o: ..\lvgl\src\misc\lv_tree.h
+.\object_tset\lv_tree.o: ..\lvgl\src\misc\lv_types.h
+.\object_tset\lv_tree.o: ..\lvgl\src\misc\../lv_conf_internal.h
+.\object_tset\lv_tree.o: ..\lvgl\src\misc\../lv_conf_kconfig.h
+.\object_tset\lv_tree.o: ../lvgl/lv_conf.h
+.\object_tset\lv_tree.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\object_tset\lv_tree.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\object_tset\lv_tree.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\object_tset\lv_tree.o: D:\keil5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\object_tset\lv_tree.o: D:\keil5\ARM\ARMCC\Bin\..\include\limits.h
+.\object_tset\lv_tree.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\object_tset\lv_tree.o: ..\lvgl\src\misc\../stdlib/lv_mem.h
+.\object_tset\lv_tree.o: ..\lvgl\src\misc\../stdlib/lv_string.h
+.\object_tset\lv_tree.o: ..\lvgl\src\misc\lv_assert.h
+.\object_tset\lv_tree.o: ..\lvgl\src\misc\lv_log.h

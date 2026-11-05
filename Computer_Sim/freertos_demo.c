@@ -28,6 +28,51 @@
 #include "Password.h"
 #include "tpad.h"
 #include "SystemSettings.h"
+#include "AudioPlayer.h"
+volatile RuntimeFaultInfo g_runtime_fault;
+
+static void runtime_fault_capture_status(void)
+{
+    g_runtime_fault.cfsr = SCB->CFSR;
+    g_runtime_fault.hfsr = SCB->HFSR;
+    g_runtime_fault.bfar = SCB->BFAR;
+    g_runtime_fault.mmfar = SCB->MMFAR;
+}
+
+void RuntimeFault_CaptureHardFault(u32 * frame, u32 exc_return)
+{
+    u32 address = (u32)frame;
+    __disable_irq();
+    g_runtime_fault.task_handle = (u32)xTaskGetCurrentTaskHandle();
+    g_runtime_fault.exc_return = exc_return;
+    g_runtime_fault.stack_pointer = address;
+    runtime_fault_capture_status();
+    /* Core registers are first in both basic and extended exception frames.
+     * Skip dereferencing an invalid stack or a failed exception stacking. */
+    if((g_runtime_fault.cfsr & ((1UL << 4) | (1UL << 12))) == 0U &&
+       ((address >= 0x20000000UL && address <= 0x2001FFE0UL) ||
+        (address >= 0x10000000UL && address <= 0x1000FFE0UL) ||
+        (address >= 0x68000000UL && address <= 0x680FFFE0UL)) &&
+       (address & 3U) == 0U) {
+        g_runtime_fault.pc = frame[6];
+        g_runtime_fault.lr = frame[5];
+        g_runtime_fault.xpsr = frame[7];
+    }
+    g_runtime_fault.kind = 1U;
+    for(;;) __NOP();
+}
+
+void vApplicationStackOverflowHook(TaskHandle_t task, char * name)
+{
+    __disable_irq();
+    g_runtime_fault.task_handle = (u32)task;
+    g_runtime_fault.task_name = name;
+    g_runtime_fault.stack_pointer = __get_PSP();
+    runtime_fault_capture_status();
+    g_runtime_fault.kind = 2U;
+    for(;;) __NOP();
+}
+
 extern volatile int32_t g_mouse_x;
 extern volatile int32_t g_mouse_y;
 extern volatile uint8_t g_mouse_pressed;
@@ -63,6 +108,15 @@ TaskHandle_t task3_handle;
 StackType_t task3_stack[TASK3_STACK]; // 静态任务的任务栈，以数组形式存储
 StaticTask_t task3_tcb;               // 静态任务的TCB结构体类型
 void task3(void *pvParameters);
+
+/* 任务4的配置 */
+/* Words: allow margin above the linker's ~2.6 KB call chain and context. */
+#define TASK4_STACK 1536
+#define TASK4_PRIORITY 3
+TaskHandle_t task4_handle;
+StackType_t *task4_stack;            // Internal SRAM; allocated before task creation.
+StaticTask_t task4_tcb;               // 静态任务的TCB结构体类型
+void task4(void *pvParameters);
 
 /* ======================= 静态创建方式，需要手动指定2个特殊任务的资源=============================== */
 /* 空闲任务的配置 */
@@ -111,22 +165,22 @@ void USBH_Msg_Show(u8 msgx)
 			LCD_ShowString(30,400,200,16,16,"USB Lost");	
 			break;
 		case 1:	//USB键盘
-			LCD_ShowString(30,130,200,16,16,"USB Connected    ");	
-			LCD_ShowString(30,150,200,16,16,"USB KeyBoard");	 
-			LCD_ShowString(30,180,210,16,16,"KEYVAL:");	
-			LCD_ShowString(30,200,210,16,16,"INPUT STRING:");	
+//			LCD_ShowString(30,130,200,16,16,"USB Connected    ");	
+//			LCD_ShowString(30,150,200,16,16,"USB KeyBoard");	 
+//			LCD_ShowString(30,180,210,16,16,"KEYVAL:");	
+//			LCD_ShowString(30,200,210,16,16,"INPUT STRING:");	
 			break;
 		case 2:	//USB鼠标
-			LCD_ShowString(30,130,200,16,16,"USB Connected    ");	
-			LCD_ShowString(30,150,200,16,16,"USB Mouse");	 
-			LCD_ShowString(30,180,210,16,16,"BUTTON:");	
-			LCD_ShowString(30,200,210,16,16,"X POS:");	
-			LCD_ShowString(30,220,210,16,16,"Y POS:");	
-			LCD_ShowString(30,240,210,16,16,"Z POS:");	
+//			LCD_ShowString(30,130,200,16,16,"USB Connected    ");	
+//			LCD_ShowString(30,150,200,16,16,"USB Mouse");	 
+//			LCD_ShowString(30,180,210,16,16,"BUTTON:");	
+//			LCD_ShowString(30,200,210,16,16,"X POS:");	
+//			LCD_ShowString(30,220,210,16,16,"Y POS:");	
+//			LCD_ShowString(30,240,210,16,16,"Z POS:");	
 			break; 		
 		case 3:	//不支持的USB设备
-			LCD_ShowString(30,130,200,16,16,"USB Connected    ");	
-			LCD_ShowString(30,150,200,16,16,"Unknow Device");	 
+//			LCD_ShowString(30,130,200,16,16,"USB Connected    ");	
+//			LCD_ShowString(30,150,200,16,16,"Unknow Device");	 
 			break; 	 
 	} 
 }   
@@ -194,11 +248,21 @@ void start_task(void *pvParameters)
 	Password_ui_create();
 	
 USBH_Init(&USB_OTG_Core_dev,USB_OTG_FS_CORE_ID,&USB_Host,&HID_cb,&USR_Callbacks); 
+
+    /* Initialize audio queues before task4 can run. */
+    /* Keep the playback return addresses and exception frames in internal
+     * SRAM. The captured fault occurred on this task's external SRAM stack. */
+    task4_stack = (StackType_t *)mymalloc(SRAMIN,
+                                         TASK4_STACK * sizeof(StackType_t));
+    if(task4_stack != NULL && !AudioPlayer_Init()) {
+        myfree(SRAMIN, task4_stack);
+        task4_stack = NULL;
+    }
 	
     /* 进入临界区:保护临界区里的代码不会被打断 */
     taskENTER_CRITICAL();
 
-    /* 使用静态创建3个任务 */
+    /* 使用静态创建4个任务 */
     task1_handle = xTaskCreateStatic(
         (TaskFunction_t)task1,
         (char *)"task1",
@@ -228,7 +292,17 @@ USBH_Init(&USB_OTG_Core_dev,USB_OTG_FS_CORE_ID,&USB_Host,&HID_cb,&USR_Callbacks)
         (StackType_t *)task3_stack, // 我们创建的任务栈（数组存储）的地址
         (StaticTask_t *)&task3_tcb  // 我们创建的tcb的地址
     );
-		
+    if(task4_stack != NULL) {
+        task4_handle = xTaskCreateStatic(
+            (TaskFunction_t)task4,
+            (char *)"task4",
+            (configSTACK_DEPTH_TYPE)TASK4_STACK,
+            (void *)NULL,
+            (UBaseType_t)TASK4_PRIORITY,
+            task4_stack,
+            &task4_tcb
+        );
+    }
 	
     /* 启动任务只需要执行一次即可，用完就删除自己 */
     vTaskDelete(NULL);
@@ -263,7 +337,7 @@ void task1(void *pvParameters)
 			}			
 		}
 
-        vTaskDelay(1);
+        vTaskDelay(5);
     }
 }
 
@@ -322,4 +396,11 @@ void task3(void *pvParameters)
 		g_tpad_mouse_pressed = TPAD_Scan(1) ? 1U : 0U;
 		vTaskDelay(pdMS_TO_TICKS(5));
     }
+}
+
+
+void task4(void *pvParameters)
+{
+    /* Wait for a song, play it, then block again when playback ends. */
+    AudioPlayer_Task(pvParameters);
 }

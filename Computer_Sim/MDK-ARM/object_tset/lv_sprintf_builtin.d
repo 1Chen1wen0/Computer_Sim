@@ -1,0 +1,14 @@
+.\object_tset\lv_sprintf_builtin.o: ..\lvgl\src\stdlib\builtin\lv_sprintf_builtin.c
+.\object_tset\lv_sprintf_builtin.o: ..\lvgl\src\stdlib\builtin\../../lv_conf_internal.h
+.\object_tset\lv_sprintf_builtin.o: ..\lvgl\src\stdlib\builtin\../../lv_conf_kconfig.h
+.\object_tset\lv_sprintf_builtin.o: ../lvgl/lv_conf.h
+.\object_tset\lv_sprintf_builtin.o: ..\lvgl\src\stdlib\builtin\../lv_sprintf.h
+.\object_tset\lv_sprintf_builtin.o: ..\lvgl\src\stdlib\builtin\../../misc/lv_types.h
+.\object_tset\lv_sprintf_builtin.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\object_tset\lv_sprintf_builtin.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\object_tset\lv_sprintf_builtin.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\object_tset\lv_sprintf_builtin.o: D:\keil5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\object_tset\lv_sprintf_builtin.o: D:\keil5\ARM\ARMCC\Bin\..\include\limits.h
+.\object_tset\lv_sprintf_builtin.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\object_tset\lv_sprintf_builtin.o: ..\lvgl\src\stdlib\builtin\../lv_string.h
+.\object_tset\lv_sprintf_builtin.o: D:\keil5\ARM\ARMCC\Bin\..\include\float.h

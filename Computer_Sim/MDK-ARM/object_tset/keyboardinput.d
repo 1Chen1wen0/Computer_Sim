@@ -1,0 +1,14 @@
+.\object_tset\keyboardinput.o: ..\UI\KeyboardInput.c
+.\object_tset\keyboardinput.o: ..\UI\KeyboardInput.h
+.\object_tset\keyboardinput.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\object_tset\keyboardinput.o: ../FreeRTOS/include/FreeRTOS.h
+.\object_tset\keyboardinput.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\object_tset\keyboardinput.o: ../Core/Inc/FreeRTOSConfig.h
+.\object_tset\keyboardinput.o: ../FreeRTOS/include/projdefs.h
+.\object_tset\keyboardinput.o: ../FreeRTOS/include/portable.h
+.\object_tset\keyboardinput.o: ../FreeRTOS/include/deprecated_definitions.h
+.\object_tset\keyboardinput.o: ../FreeRTOS/portable/RVDS/ARM_CM4F/portmacro.h
+.\object_tset\keyboardinput.o: ../FreeRTOS/include/mpu_wrappers.h
+.\object_tset\keyboardinput.o: ../FreeRTOS/include/queue.h
+.\object_tset\keyboardinput.o: ../FreeRTOS/include/task.h
+.\object_tset\keyboardinput.o: ../FreeRTOS/include/list.h

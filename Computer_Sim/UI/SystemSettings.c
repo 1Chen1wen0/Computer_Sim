@@ -84,7 +84,7 @@ static void system_settings_apply_hardware(void)
 
     codec_volume = (uint8_t)(((uint32_t)current_settings.volume * 63UL + 50UL) / 100UL);
     WM8978_HPvol_Set(codec_volume, codec_volume);
-    WM8978_SPKvol_Set(codec_volume);
+    WM8978_SPKvol_Set(0);
 }
 
 void SystemSettings_Init(void)

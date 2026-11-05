@@ -48,7 +48,7 @@
             <NotGenerated>0</NotGenerated>
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
-          <OutputDirectory>Computer_Sim\</OutputDirectory>
+          <OutputDirectory>.\object_tset\</OutputDirectory>
           <OutputName>Computer_Sim</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
@@ -81,7 +81,7 @@
           </BeforeMake>
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
-            <RunUserProg2>1</RunUserProg2>
+            <RunUserProg2>0</RunUserProg2>
             <UserProg1Name></UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
@@ -3323,6 +3323,26 @@
               <FilePath>..\UI\DesktopUI.h</FilePath>
             </File>
             <File>
+              <FileName>AudioPlayer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UI\AudioPlayer.c</FilePath>
+            </File>
+            <File>
+              <FileName>AudioPlayer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UI\AudioPlayer.h</FilePath>
+            </File>
+            <File>
+              <FileName>DrawingApp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UI\DrawingApp.c</FilePath>
+            </File>
+            <File>
+              <FileName>DrawingApp.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UI\DrawingApp.h</FilePath>
+            </File>
+            <File>
               <FileName>SystemSettings.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\UI\SystemSettings.c</FilePath>
@@ -3331,6 +3351,16 @@
               <FileName>SystemSettings.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\UI\SystemSettings.h</FilePath>
+            </File>
+            <File>
+              <FileName>SystemLog.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UI\SystemLog.c</FilePath>
+            </File>
+            <File>
+              <FileName>SystemLog.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UI\SystemLog.h</FilePath>
             </File>
           </Files>
         </Group>

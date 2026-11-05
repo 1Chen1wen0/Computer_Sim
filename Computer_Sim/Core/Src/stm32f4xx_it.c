@@ -24,6 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include "FreeRTOS.h"
 #include "task.h"
+#include "freertos_demo.h"
 extern void xPortSysTickHandler(void);
 /* USER CODE END Includes */
 
@@ -88,16 +89,17 @@ void NMI_Handler(void)
 /**
   * @brief This function handles Hard fault interrupt.
   */
-void HardFault_Handler(void)
+/* Preserve the exception frame before a C prologue changes MSP. */
+__asm void HardFault_Handler(void)
 {
-  /* USER CODE BEGIN HardFault_IRQn 0 */
-
-  /* USER CODE END HardFault_IRQn 0 */
-  while (1)
-  {
-    /* USER CODE BEGIN W1_HardFault_IRQn 0 */
-    /* USER CODE END W1_HardFault_IRQn 0 */
-  }
+    extern RuntimeFault_CaptureHardFault;
+    PRESERVE8
+    TST lr, #4
+    ITE EQ
+    MRSEQ r0, msp
+    MRSNE r0, psp
+    MOV r1, lr
+    B RuntimeFault_CaptureHardFault
 }
 
 /**

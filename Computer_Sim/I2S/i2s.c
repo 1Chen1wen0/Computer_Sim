@@ -1,5 +1,6 @@
 #include "i2s.h"  
 #include "delay.h"
+#include "FreeRTOS.h"
 //////////////////////////////////////////////////////////////////////////////////	 
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
 //ALIENTEK STM32F407开发板
@@ -107,7 +108,7 @@ u8 I2S2_SampleRate_Set(u32 samplerate)
 {   
     u8 i=0; 
 	u32 tempreg=0;
-    RCC_PeriphCLKInitTypeDef RCCI2S2_ClkInitSture;  
+    RCC_PeriphCLKInitTypeDef RCCI2S2_ClkInitSture = {0};
 	
 	for(i=0;i<(sizeof(I2S_PSC_TBL)/10);i++)//看看改采样率是否可以支持
 	{
@@ -118,10 +119,10 @@ u8 I2S2_SampleRate_Set(u32 samplerate)
     RCCI2S2_ClkInitSture.PeriphClockSelection=RCC_PERIPHCLK_I2S;	//外设时钟源选择 
     RCCI2S2_ClkInitSture.PLLI2S.PLLI2SN=(u32)I2S_PSC_TBL[i][1];    	//设置PLLI2SN
     RCCI2S2_ClkInitSture.PLLI2S.PLLI2SR=(u32)I2S_PSC_TBL[i][2];    	//设置PLLI2SR
-    HAL_RCCEx_PeriphCLKConfig(&RCCI2S2_ClkInitSture);             	//设置时钟
-	
-	RCC->CR|=1<<26;					//开启I2S时钟
-	while((RCC->CR&1<<27)==0);		//等待I2S时钟开启成功. 
+    /* HAL waits for PLLI2S with a timeout; propagate failure. */
+    if(HAL_RCCEx_PeriphCLKConfig(&RCCI2S2_ClkInitSture) != HAL_OK ||
+       __HAL_RCC_GET_FLAG(RCC_FLAG_PLLI2SRDY) == RESET) return 1;
+
 	tempreg=I2S_PSC_TBL[i][3]<<0;	//设置I2SDIV
 	tempreg|=I2S_PSC_TBL[i][4]<<8;	//设置ODD位
 	tempreg|=1<<9;					//使能MCKOE位,输出MCK
@@ -134,8 +135,10 @@ u8 I2S2_SampleRate_Set(u32 samplerate)
 //buf0:M0AR地址.
 //buf1:M1AR地址.
 //num:每次传输数据量
-void I2S2_TX_DMA_Init(u8* buf0,u8 *buf1,u16 num)
+u8 I2S2_TX_DMA_Init(u8* buf0,u8 *buf1,u16 num)
 {  
+    HAL_NVIC_DisableIRQ(DMA1_Stream4_IRQn);
+    CLEAR_BIT(SPI2->CR2, SPI_CR2_TXDMAEN);
     __HAL_RCC_DMA1_CLK_ENABLE();                                    		//使能DMA1时钟
     __HAL_LINKDMA(&I2S2_Handler,hdmatx,I2S2_TXDMA_Handler);         		//将DMA与I2S联系起来
 	
@@ -151,16 +154,26 @@ void I2S2_TX_DMA_Init(u8* buf0,u8 *buf1,u16 num)
     I2S2_TXDMA_Handler.Init.FIFOMode=DMA_FIFOMODE_DISABLE;          		//不使用FIFO
     I2S2_TXDMA_Handler.Init.MemBurst=DMA_MBURST_SINGLE;             		//存储器单次突发传输
     I2S2_TXDMA_Handler.Init.PeriphBurst=DMA_PBURST_SINGLE;          		//外设突发单次传输 
-    HAL_DMA_DeInit(&I2S2_TXDMA_Handler);                            		//先清除以前的设置
-    HAL_DMA_Init(&I2S2_TXDMA_Handler);	                            		//初始化DMA
+    if(HAL_DMA_DeInit(&I2S2_TXDMA_Handler) != HAL_OK ||
+       HAL_DMA_Init(&I2S2_TXDMA_Handler) != HAL_OK) return 1;
+    if(buf0 == NULL || buf1 == NULL || num == 0U) return 1;
 
-    HAL_DMAEx_MultiBufferStart(&I2S2_TXDMA_Handler,(u32)buf0,(u32)&SPI2->DR,(u32)buf1,num);//开启双缓冲
-    __HAL_DMA_DISABLE(&I2S2_TXDMA_Handler);                         		//先关闭DMA 
-    delay_us(10);                                                   		//10us延时，防止-O2优化出问题 	
-    __HAL_DMA_ENABLE_IT(&I2S2_TXDMA_Handler,DMA_IT_TC);             		//开启传输完成中断
-    __HAL_DMA_CLEAR_FLAG(&I2S2_TXDMA_Handler,DMA_FLAG_TCIF0_4);     		//清除DMA传输完成中断标志位
-    HAL_NVIC_SetPriority(DMA1_Stream4_IRQn,0,0);                    		//DMA中断优先级
+    /* Use the example's HAL double-buffer setup. I2S requests stay gated
+     * while HAL briefly enables the stream during configuration. */
+    if(HAL_DMAEx_MultiBufferStart(&I2S2_TXDMA_Handler, (u32)buf0,
+        (u32)&SPI2->DR, (u32)buf1, num) != HAL_OK) return 1;
+    __HAL_DMA_DISABLE(&I2S2_TXDMA_Handler);
+    delay_us(10);
+    __HAL_DMA_CLEAR_FLAG(&I2S2_TXDMA_Handler,
+        DMA_FLAG_FEIF0_4 | DMA_FLAG_DMEIF0_4 | DMA_FLAG_TEIF0_4 |
+        DMA_FLAG_HTIF0_4 | DMA_FLAG_TCIF0_4);
+    HAL_NVIC_ClearPendingIRQ(DMA1_Stream4_IRQn);
+    HAL_NVIC_SetPriority(DMA1_Stream4_IRQn,
+        configMAX_SYSCALL_INTERRUPT_PRIORITY >> (8U - __NVIC_PRIO_BITS), 0U);
+    __HAL_DMA_ENABLE_IT(&I2S2_TXDMA_Handler, DMA_IT_TC);
     HAL_NVIC_EnableIRQ(DMA1_Stream4_IRQn);
+    return 0;
+
 } 
 
 //I2S DMA回调函数指针
@@ -168,22 +181,25 @@ void (*i2s_tx_callback)(void);	//TX回调函数
 //DMA1_Stream4中断服务函数
 void DMA1_Stream4_IRQHandler(void)
 {  
-    if(__HAL_DMA_GET_FLAG(&I2S2_TXDMA_Handler,DMA_FLAG_TCIF0_4)!=RESET) //DMA传输完成
+    if(__HAL_DMA_GET_IT_SOURCE(&I2S2_TXDMA_Handler, DMA_IT_TC) != RESET &&
+       __HAL_DMA_GET_FLAG(&I2S2_TXDMA_Handler,DMA_FLAG_TCIF0_4)!=RESET) //DMA传输完成
     {
         __HAL_DMA_CLEAR_FLAG(&I2S2_TXDMA_Handler,DMA_FLAG_TCIF0_4);     //清除DMA传输完成中断标志位
-        i2s_tx_callback();	//执行回调函数,读取数据等操作在这里面处理  
+        if(i2s_tx_callback != NULL) i2s_tx_callback();	//执行回调函数,读取数据等操作在这里面处理
     } 
 } 
 
 //I2S开始播放
 void I2S_Play_Start(void)
 {   	
+	SET_BIT(SPI2->CR2, SPI_CR2_TXDMAEN);
 	__HAL_DMA_ENABLE(&I2S2_TXDMA_Handler);//开启DMA TX传输  			
 }
 
 //关闭I2S播放
 void I2S_Play_Stop(void)
 { 
+	CLEAR_BIT(SPI2->CR2, SPI_CR2_TXDMAEN);
 	__HAL_DMA_DISABLE(&I2S2_TXDMA_Handler);//结束播放;		 	 
 } 
 
@@ -193,3 +209,22 @@ void I2S_Play_Stop(void)
 
 
 
+
+/* Stop interrupts and confirm DMA has stopped before freeing its buffers. */
+u8 I2S2_TX_DMA_DeInit(void)
+{
+    HAL_StatusTypeDef result;
+    HAL_NVIC_DisableIRQ(DMA1_Stream4_IRQn);
+    CLEAR_BIT(SPI2->CR2, SPI_CR2_TXDMAEN);
+    /* HAL's MultiBufferStart leaves State BUSY even when EN is cleared.
+     * Abort waits for EN to clear and releases the HAL lock before DeInit. */
+    if(HAL_DMA_GetState(&I2S2_TXDMA_Handler) == HAL_DMA_STATE_BUSY) {
+        result = HAL_DMA_Abort(&I2S2_TXDMA_Handler);
+        if(result != HAL_OK) return 1U;
+    }
+    if((DMA1_Stream4->CR & DMA_SxCR_EN) != 0U) return 1U;
+    result = HAL_DMA_DeInit(&I2S2_TXDMA_Handler);
+    HAL_NVIC_ClearPendingIRQ(DMA1_Stream4_IRQn);
+    i2s_tx_callback = NULL;
+    return result == HAL_OK ? 0U : 1U;
+}

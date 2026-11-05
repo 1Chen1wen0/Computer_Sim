@@ -47,6 +47,7 @@
 #include "tpad.h"
 #include "ScreenPower.h"
 #include "SystemSettings.h"
+#include "SystemLog.h"
 #include "wm8978.h"
 /* USER CODE END Includes */
 
@@ -120,7 +121,7 @@ int main(void)
 	WM8978_Init();					//初始化WM8978
 	my_mem_init(SRAMIN);			//初始化内部内存池
 	my_mem_init(SRAMEX);			//初始化外部内存池
-//	LOG_init();
+    if(!SystemLog_Init()) printf("File log unavailable: external SRAM allocation failed\r\n");
 	exfuns_init();					//为fatfs相关变量申请内存  
  	f_mount(fs[0],"0:",1); 			//挂载SD卡 
 	LCD_Init();

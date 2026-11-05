@@ -170,6 +170,41 @@
           <WinNumber>1</WinNumber>
           <ItemText>uwTick</ItemText>
         </Ww>
+        <Ww>
+          <count>4</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>sta</ItemText>
+        </Ww>
+        <Ww>
+          <count>5</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>cnt</ItemText>
+        </Ww>
+        <Ww>
+          <count>6</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>sector</ItemText>
+        </Ww>
+        <Ww>
+          <count>7</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>SDCARD_Handler.ErrorCode</ItemText>
+        </Ww>
+        <Ww>
+          <count>8</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>g_sd_first_error</ItemText>
+        </Ww>
+        <Ww>
+          <count>9</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>g_audio_debug</ItemText>
+        </Ww>
+        <Ww>
+          <count>10</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>g_runtime_fault</ItemText>
+        </Ww>
       </WatchWindow1>
       <Tracepoint>
         <THDelay>0</THDelay>
@@ -5877,7 +5912,7 @@
 
   <Group>
     <GroupName>lvgl</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -5933,7 +5968,7 @@
 
   <Group>
     <GroupName>BSP</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -6153,7 +6188,7 @@
 
   <Group>
     <GroupName>FATFS</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -6253,7 +6288,7 @@
 
   <Group>
     <GroupName>W25QXX</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -6393,7 +6428,7 @@
 
   <Group>
     <GroupName>I2S</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -6748,8 +6783,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\UI\SystemSettings.c</PathWithFileName>
-      <FilenameWithoutPath>SystemSettings.c</FilenameWithoutPath>
+      <PathWithFileName>..\UI\AudioPlayer.c</PathWithFileName>
+      <FilenameWithoutPath>AudioPlayer.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -6760,8 +6795,80 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
+      <PathWithFileName>..\UI\AudioPlayer.h</PathWithFileName>
+      <FilenameWithoutPath>AudioPlayer.h</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>44</GroupNumber>
+      <FileNumber>517</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\UI\DrawingApp.c</PathWithFileName>
+      <FilenameWithoutPath>DrawingApp.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>44</GroupNumber>
+      <FileNumber>518</FileNumber>
+      <FileType>5</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\UI\DrawingApp.h</PathWithFileName>
+      <FilenameWithoutPath>DrawingApp.h</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>44</GroupNumber>
+      <FileNumber>519</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\UI\SystemSettings.c</PathWithFileName>
+      <FilenameWithoutPath>SystemSettings.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>44</GroupNumber>
+      <FileNumber>520</FileNumber>
+      <FileType>5</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
       <PathWithFileName>..\UI\SystemSettings.h</PathWithFileName>
       <FilenameWithoutPath>SystemSettings.h</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>44</GroupNumber>
+      <FileNumber>521</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\UI\SystemLog.c</PathWithFileName>
+      <FilenameWithoutPath>SystemLog.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>44</GroupNumber>
+      <FileNumber>522</FileNumber>
+      <FileType>5</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\UI\SystemLog.h</PathWithFileName>
+      <FilenameWithoutPath>SystemLog.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -6769,13 +6876,13 @@
 
   <Group>
     <GroupName>TPAD</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>45</GroupNumber>
-      <FileNumber>517</FileNumber>
+      <FileNumber>523</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -6787,7 +6894,7 @@
     </File>
     <File>
       <GroupNumber>45</GroupNumber>
-      <FileNumber>518</FileNumber>
+      <FileNumber>524</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -6807,7 +6914,7 @@
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>46</GroupNumber>
-      <FileNumber>519</FileNumber>
+      <FileNumber>525</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -6819,7 +6926,7 @@
     </File>
     <File>
       <GroupNumber>46</GroupNumber>
-      <FileNumber>520</FileNumber>
+      <FileNumber>526</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -6839,7 +6946,7 @@
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>47</GroupNumber>
-      <FileNumber>521</FileNumber>
+      <FileNumber>527</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -6851,7 +6958,7 @@
     </File>
     <File>
       <GroupNumber>47</GroupNumber>
-      <FileNumber>522</FileNumber>
+      <FileNumber>528</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -6871,7 +6978,7 @@
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>48</GroupNumber>
-      <FileNumber>523</FileNumber>
+      <FileNumber>529</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -6883,7 +6990,7 @@
     </File>
     <File>
       <GroupNumber>48</GroupNumber>
-      <FileNumber>524</FileNumber>
+      <FileNumber>530</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -6895,7 +7002,7 @@
     </File>
     <File>
       <GroupNumber>48</GroupNumber>
-      <FileNumber>525</FileNumber>
+      <FileNumber>531</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -6907,7 +7014,7 @@
     </File>
     <File>
       <GroupNumber>48</GroupNumber>
-      <FileNumber>526</FileNumber>
+      <FileNumber>532</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
